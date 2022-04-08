@@ -1,4 +1,4 @@
-# WideKYC SDK
+# WideKYC
 
 All in one eKYC (Electronic Know Your Customer) solution available for android and ios. Wide Technologies provides an SDK for you to implement integration with your native mobile application. This document provides you with an overview of the SDK integration in terms of its architecture, interaction flow, supported products, and general integration process.
 
@@ -34,7 +34,7 @@ WideKYC SDK integration can be applied to the following products:
 ## Interaction flow
 The following diagram illustrates the whole interaction flow when a WideKYC service is started through the mobile application.
 
-![interactionDiagram](https://github.com/wide-mobile/kyc/blob/main/assets/interactionDiagram.jpeg)
+![interactionDiagram](https://github.com/widetechid/WideKYC/blob/main/assets/interactionDiagram.jpeg)
 <p align=center>Figure 2. Sequence diagram</p>
 
 1. A user initiates a business process (for example, an ID Recognize process) through the merchant application.
