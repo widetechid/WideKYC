@@ -10,5 +10,4 @@ target 'sdkDemo' do
     pod 'SVProgressHUD'
     pod 'GoogleMLKit/TextRecognition', '2.2.0'
     pod 'GoogleMLKit/FaceDetection'
-    pod 'KDCircularProgress'
 end

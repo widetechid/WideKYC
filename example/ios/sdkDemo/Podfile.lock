@@ -32,7 +32,6 @@ PODS:
   - GoogleUtilitiesComponents (1.1.0):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.7.1)
-  - KDCircularProgress (1.5.4)
   - MLImage (1.0.0-beta1)
   - MLKitCommon (3.0.0):
     - GoogleDataTransport (~> 9.0)
@@ -69,7 +68,6 @@ PODS:
 DEPENDENCIES:
   - GoogleMLKit/FaceDetection
   - GoogleMLKit/TextRecognition (= 2.2.0)
-  - KDCircularProgress
   - SVProgressHUD
   - SwiftyJSON
 
@@ -81,7 +79,6 @@ SPEC REPOS:
     - GoogleUtilities
     - GoogleUtilitiesComponents
     - GTMSessionFetcher
-    - KDCircularProgress
     - MLImage
     - MLKitCommon
     - MLKitFaceDetection
@@ -100,7 +97,6 @@ SPEC CHECKSUMS:
   GoogleUtilities: e0913149f6b0625b553d70dae12b49fc62914fd1
   GoogleUtilitiesComponents: 679b2c881db3b615a2777504623df6122dd20afe
   GTMSessionFetcher: 4577a4cc914a5a07c40a8a0ad0acc22080418c2d
-  KDCircularProgress: 98200c6b8e85d22bc04eb644721d3b1e12b0686b
   MLImage: 647f3d580c10b3c9a3f6154f5d7baead60c42a0c
   MLKitCommon: 6d6be0a2e9a6340aad1c1f2b9449c11dee8af70f
   MLKitFaceDetection: 897f007aa4eb426ef1bac7c66e5451d02ffc2e83
@@ -112,6 +108,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 50743802e401422345ee9dae4d8f4e24ba2560c3
+PODFILE CHECKSUM: ae2c62b669c5c8143e468530d209d466f5d86023
 
 COCOAPODS: 1.11.3

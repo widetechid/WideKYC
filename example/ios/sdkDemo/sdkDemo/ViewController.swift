@@ -28,6 +28,8 @@ class ViewController:UIViewController,  UITextFieldDelegate, delegateProduct {
     var wkycid = WKYCID()
     var clientConfig = ClientConfig()
     
+    var fileJson = NSMutableDictionary()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,10 +51,18 @@ class ViewController:UIViewController,  UITextFieldDelegate, delegateProduct {
         txtApi.textColor = .gray
         txtProduct.textColor = .gray
         txtServiceLevel.textColor = .gray
-
-        constrainBtnStart.constant = 20
-        lbServiceLevel.isHidden = true
-        txtServiceLevel.isHidden = true
+        
+        if txtProduct.text == WKYCConstants.PASSIVE_LIVENESS{
+            constrainBtnStart.constant = 114
+            lbServiceLevel.isHidden = false
+            txtServiceLevel.isHidden = false
+            txtServiceLevel.text = "62000"
+        }
+        else{
+            constrainBtnStart.constant = 20
+            lbServiceLevel.isHidden = true
+            txtServiceLevel.isHidden = true
+        }
 
         //Looks for single or multiple taps.
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
@@ -92,7 +102,13 @@ class ViewController:UIViewController,  UITextFieldDelegate, delegateProduct {
     }
     
     func updateLayout(productChoice : String){
-        if txtProduct.text == WKYCConstants.ID_VALIDATION{
+        if txtProduct.text == WKYCConstants.PASSIVE_LIVENESS{
+            constrainBtnStart.constant = 114
+            lbServiceLevel.isHidden = false
+            txtServiceLevel.isHidden = false
+            txtServiceLevel.text = WKYCConstants.SL_PASSIVE_LIVENESS_MED
+        }
+        else if txtProduct.text == WKYCConstants.ID_VALIDATION{
             constrainBtnStart.constant = 114
             lbServiceLevel.isHidden = false
             txtServiceLevel.isHidden = false
@@ -102,7 +118,7 @@ class ViewController:UIViewController,  UITextFieldDelegate, delegateProduct {
             constrainBtnStart.constant = 114
             lbServiceLevel.isHidden = false
             txtServiceLevel.isHidden = false
-            txtServiceLevel.text = WKYCConstants.SL_ID_RECOGNIZE_NOVALIDATION
+            txtServiceLevel.text = WKYCConstants.SL_ID_RECOGNIZE_ENT
         }
         else{
             constrainBtnStart.constant = 20
@@ -169,21 +185,13 @@ class ViewController:UIViewController,  UITextFieldDelegate, delegateProduct {
                    
                     let request = WKYCRequest()
                     request.wkycConfig = wkycConfig
-                    if let path = Bundle.main.path(forResource: "config", ofType: "json") {
-                        do {
-                              let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                              let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
-                              let dictJson = NSMutableDictionary()
-                              dictJson.addEntries(from: jsonResult as! [AnyHashable : Any])
-                              
-                            if dictJson.count != 0{
-                                clientConfig.clientConfig = dictJson 
-                                request.clientConfig = clientConfig
-                            }
-                          } catch {
-                               // handle error
-                          }
+                    let dictJson = NSMutableDictionary()
+                    dictJson[WKYCConstants.LOCALE] = WKYCConstants.LANG_EN
+                    if getFileJson().count != 0{
+                       dictJson[WKYCConstants.UI_CONFIG_PATH] = getFileJson()
                     }
+                    clientConfig.clientConfig = dictJson
+                    request.clientConfig = clientConfig
                     request.wkycID = wkycid
                     
                      do {
@@ -289,6 +297,24 @@ class ViewController:UIViewController,  UITextFieldDelegate, delegateProduct {
                     completion(nil, error!)
                 }
               })
+    }
+    
+    func getFileJson() -> NSDictionary{
+        if let path = Bundle.main.path(forResource: "config", ofType: "json") {
+            do {
+                  let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                  let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+                  fileJson.addEntries(from: jsonResult as! [AnyHashable : Any])
+
+                if fileJson.count != 0{
+                    return fileJson
+                }
+              } catch {
+                   // handle error
+              }
+        }
+        
+        return NSDictionary()
     }
     
     func ResultDelegate(dictData: NSDictionary) {
