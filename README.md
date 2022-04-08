@@ -8,11 +8,12 @@ All in one eKYC (Electronic Know Your Customer) solution available for android a
 
 ## Contents
 
-- [Available products](#supported-products)
+- [Available Products](#available-products)
 - [Integration Architecture](#integration-architecture)
-- [Interaction flow](#interaction-flow)
+- [Interaction Flow](#interaction-flow)
+- [Interaction Process](#interaction-process)
 
-## Available products
+## Available Products
 WideKYC SDK integration can be applied to the following products:
 
 * Liveness Detection 
@@ -41,7 +42,7 @@ SDK integration consists of two parts:
 
 * Server-side integration: Expose endpoints for your (merchant) application in your (merchant) server so that the merchant application can interact with the merchant server, which then accesses the WideKYC API to initialize a transaction and double-check verification results.
 	
-## Interaction flow
+## Interaction Flow
 The following diagram illustrates the whole interaction flow when a WideKYC service is started through the mobile application.
 
 ![interactionDiagram](https://github.com/widetechid/WideKYC/blob/main/assets/interactionDiagram.jpeg)
@@ -67,7 +68,7 @@ The following diagram illustrates the whole interaction flow when a WideKYC serv
 16. The merchant application informs the user that the process is completed.
 
 
-# Integration Process
+## Integration Process
 
 This section introduces how to implement the Wide SDK on and client-side mobile.
 
