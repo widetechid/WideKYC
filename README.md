@@ -5,7 +5,7 @@ All in one eKYC (Electronic Know Your Customer) solution available for android a
 ## Integration architecture	
 Here is the architecture of our SDK integration.
 
-![integrationChart](https://github.com/wide-mobile/kyc/blob/main/assets/integrationChart.jpeg)
+![integrationChart](https://github.com/widetechid/WideKYC/blob/main/assets/integrationChart.jpeg)
 <p align=center>Figure 1. SDK integration architecture</p>
 
 SDK integration consists of two parts:
@@ -26,9 +26,9 @@ WideKYC SDK integration can be applied to the following products:
 * RealID (ID Recognize -> Liveness Detection -> ID Validation)
 
 <p float="left">
-<img src="https://github.com/wide-mobile/kyc/blob/main/assets/passiveLiveness.png" alt="00" width="250"/>
-<img src="https://github.com/wide-mobile/kyc/blob/main/assets/idRecognize.png" alt="01" width="250"/>
-<img src="https://github.com/wide-mobile/kyc/blob/main/assets/idValidation.png" alt="02" width="250"/>
+<img src="https://github.com/widetechid/WideKYC/blob/main/assets/passiveLiveness.png" alt="00" width="250"/>
+<img src="https://github.com/widetechid/WideKYC/blob/main/assets/idRecognize.png" alt="01" width="250"/>
+<img src="https://github.com/widetechid/WideKYC/blob/main/assets/idValidation.png" alt="02" width="250"/>
 </p>
 	
 ## Interaction flow
@@ -155,7 +155,7 @@ a. XCODE Configuration
 
 Add widekyc.framework to target app -> general -> Frameworks and Libraries -> add new framework -> choose widekyc.framework in your directory.
 
-![XCODEConfiguration](https://github.com/wide-mobile/kyc/blob/main/assets/xcodeConfig.png)
+![XCODEConfiguration](https://github.com/widetechid/WideKYC/blob/main/assets/xcodeConfig.png)
 <p align=center>Figure 3. XCODE Configuration</p>
 
 b. Add the SDK dependency 
