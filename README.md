@@ -11,7 +11,8 @@ All in one eKYC (Electronic Know Your Customer) solution available for android a
 - [Available Products](#available-products)
 - [Integration Architecture](#integration-architecture)
 - [Interaction Flow](#interaction-flow)
-- [Interaction Process](#interaction-process)
+- [Integration Process](#integration-process)
+- [API Reference](#api-reference)
 
 ## Available Products
 WideKYC SDK integration can be applied to the following products:
@@ -69,6 +70,8 @@ The following diagram illustrates the whole interaction flow when a WideKYC serv
 
 
 ## Integration Process
+
+Please refer to this wiki page for integration process
 
 This section introduces how to implement the Wide SDK on and client-side mobile.
 
@@ -231,10 +234,7 @@ If the end-user has not completed the flow or client or server-side runtime erro
 And if the end-user canceled the process using the title back button or native back on their device, the onCancel method is invoked, where related process logic needs to be implemented according to your business requirements.
 
 
-
-
-
-# API Reference
+## API Reference
 
 ### Service Level 
 The following table shows the service level types that are supported by the WideKYC SDK APIs, and the corresponding validation & behaviour that are returned/processed for each service level type.
