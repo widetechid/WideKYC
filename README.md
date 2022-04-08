@@ -77,13 +77,16 @@ a. Configure the maven repository
 
 Add the following maven repository configuration to the build.gradle file that is in your project root directory.
 
-    maven { url 'https://jitpack.io' }
+    maven {
+         setAllowInsecureProtocol(true)
+         url 'http://10.240.39.141/nexus/repository/maven-releases'
+    }
 
 b. Add the SDK dependency 
 
 Add the SDK as a dependency in your module's (application-level) gradle file (usually app/build.gradle).
 
-    implementation ('com.github.wide-mobile:wideKYC:1.1.0@aar'){transitive = true}
+    implementation ('id.co.widetechnologies.component.mobile:widekyc:1.1.0'){transitive = true}
 
 ### 2. Get meta information
 
