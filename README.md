@@ -1,6 +1,15 @@
-# WideKYC
+<h1 align="center">
+  <a>
+    WideKYC
+  </a>
+</h1>
 
 All in one eKYC (Electronic Know Your Customer) solution available for android and ios. Wide Technologies provides an SDK for you to implement integration with your native mobile application. This document provides you with an overview of the SDK integration in terms of its architecture, interaction flow, supported products, and general integration process.
+
+## Contents
+
+- [Integration architecture](integration-architecture)
+
 
 ## Integration architecture	
 Here is the architecture of our SDK integration.
