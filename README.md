@@ -4,6 +4,16 @@
   </a>
 </h1>
 
+<div align="center">
+	
+<a href="">![SDK Version](https://img.shields.io/badge/WideKYC-1.1.0-brightgreen)</a>
+<a href="">![GitHub language count](https://img.shields.io/github/languages/count/widetechid/widekyc)</a>
+<a href="">![GitHub top language](https://img.shields.io/github/languages/top/widetechid/widekyc)</a>
+<a href="">![GitHub repo size](https://img.shields.io/github/repo-size/widetechid/widekyc)</a>
+<a href="">![GitHub last commit](https://img.shields.io/github/last-commit/widetechid/widekyc)</a>
+	
+</div>
+
 All in one eKYC (Electronic Know Your Customer) solution available for android and ios. Wide Technologies provides an SDK for you to implement integration with your native mobile application. This document provides you with an overview of the SDK integration in terms of its architecture, interaction flow, available products, and general integration process.
 
 ## Contents
