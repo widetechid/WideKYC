@@ -1,0 +1,15 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            url 'https://rpt.primecash.co.id/nexus/repository/maven-releases/'
+        }
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+rootProject.name = "WideKYC SDK Example"
+include ':app'
