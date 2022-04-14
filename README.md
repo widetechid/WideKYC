@@ -29,9 +29,9 @@ All in one eKYC (Electronic Know Your Customer) solution available for android a
 WideKYC SDK integration can be applied to the following products:
 
 * Liveness Detection 
-* ID Recognize (OCR)
-* ID Validation by Population and Civil Registration Agency (_Dukcapil_)
-* RealID (ID Recognize -> Liveness Detection -> ID Validation)
+* ID Recognize _(OCR)_
+* ID Validation _(by Dukcapil - Population and Civil Registration Agency)_
+* RealID _(ID Recognize -> Liveness Detection -> ID Validation)_
 
 <p float="left">
 <img src="https://github.com/widetechid/WideKYC/blob/main/assets/passiveLiveness.png" alt="00" width="250"/>
