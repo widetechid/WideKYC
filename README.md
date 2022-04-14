@@ -22,6 +22,7 @@ All in one eKYC (Electronic Know Your Customer) solution available for android a
 - [Integration Architecture](#integration-architecture)
 - [Interaction Flow](#interaction-flow)
 - [Integration Process](#integration-process)
+- [SDK Reference](#sdk-reference)
 - [API Reference](#api-reference)
 
 ## Available Products
