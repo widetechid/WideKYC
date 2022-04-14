@@ -4,8 +4,7 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         maven {
-            setAllowInsecureProtocol(true)
-            url 'http://10.240.39.141/nexus/repository/maven-releases'
+            url 'https://rpt.primecash.co.id/nexus/repository/maven-releases/'
         }
         flatDir {
             dirs 'libs'
