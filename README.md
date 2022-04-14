@@ -85,17 +85,15 @@ Please refer to this wiki page for [**Integration Process**][integration-process
 
 [integration-process]: https://github.com/widetechid/WideKYC/wiki/Integration-Process
 
+## SDK Reference
+
+Please refer to this wiki page for [**Android SDK Reference**][android-sdk-reference] and [**iOS SDK Reference**][ios-sdk-reference].
+
+[android-sdk-reference]: https://github.com/widetechid/WideKYC/wiki/SDK-Reference-(Android)
+[ios-sdk-reference]: https://github.com/widetechid/WideKYC/wiki/SDK-Reference-(iOS)
+
 ## API Reference
 
-### Service Level 
-The following table shows the service level types that are supported by the WideKYC SDK APIs, and the corresponding validation & behaviour that are returned/processed for each service level type.
+Please refer to this wiki page for [**API Reference**][api-reference].
 
-| Product            | Service Level     | Description                        |
-| :----------------: |:-----------------:| :---------------------------------:|
-| Passive Liveness   | 62000             |  Medium liveness validation.       |
-|                    | 62001             |  Advanced liveness validation.     |
-| Id Recognize       | 62010             |  Entry Id Recognize validation.    |
-|                    | 62011             |  Medium Id Recognize validation.   |
-|                    | 62012             |  Advanced Id Recognize validation. |
-| Id Validation.     | 62020             |  Id Validation with UI.            |
-|                    | 62021             |  Id Validation non UI.             |
+[api-reference]: https://github.com/widetechid/WideKYC/wiki/API-Reference
