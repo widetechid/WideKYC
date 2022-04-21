@@ -4,7 +4,7 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         maven {
-            url 'https://nexus.primecash.co.id/repository/maven-releases/'
+            url 'https://maven.primecash.co.id/repository/maven-releases/'
         }
         flatDir {
             dirs 'libs'
