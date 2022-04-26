@@ -60,19 +60,21 @@ PODS:
     - nanopb/encode (= 2.30908.0)
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
-  - PromisesObjC (2.0.0)
-  - Protobuf (3.19.4)
+  - PromisesObjC (2.1.0)
+  - Protobuf (3.20.1)
   - SVProgressHUD (2.2.5)
   - SwiftyJSON (5.0.1)
+  - widekyc (1.1.1):
+    - GoogleMLKit/FaceDetection
+    - GoogleMLKit/TextRecognition (= 2.2.0)
+    - SVProgressHUD
+    - SwiftyJSON
 
 DEPENDENCIES:
-  - GoogleMLKit/FaceDetection
-  - GoogleMLKit/TextRecognition (= 2.2.0)
-  - SVProgressHUD
-  - SwiftyJSON
+  - widekyc
 
 SPEC REPOS:
-  trunk:
+  https://github.com/CocoaPods/Specs.git:
     - GoogleDataTransport
     - GoogleMLKit
     - GoogleToolboxForMac
@@ -89,6 +91,7 @@ SPEC REPOS:
     - Protobuf
     - SVProgressHUD
     - SwiftyJSON
+    - widekyc
 
 SPEC CHECKSUMS:
   GoogleDataTransport: 629c20a4d363167143f30ea78320d5a7eb8bd940
@@ -103,11 +106,12 @@ SPEC CHECKSUMS:
   MLKitTextRecognition: fd52b7b3cef00751c202475f5a147e9752130767
   MLKitVision: 26da299aef93291f24f5200e8372919f73abf3b5
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
-  PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
-  Protobuf: 235750e4696ff59fb07d949a9dbbc92b3c0700fe
+  PromisesObjC: 99b6f43f9e1044bd87a95a60beff28c2c44ddb72
+  Protobuf: b60ec2f51ad74765f44d0c09d2e0579d7de21745
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
+  widekyc: fb009ceb9b6bc9de44be0a48fb7e3a41fda82332
 
-PODFILE CHECKSUM: ae2c62b669c5c8143e468530d209d466f5d86023
+PODFILE CHECKSUM: b8a025e3296ebdfb666adc0b1762205f3972ec40
 
 COCOAPODS: 1.11.3

@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE11160E27FFD5A60043E7CA /* widekyc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE11160D27FFD5A60043E7CA /* widekyc.framework */; };
-		CE11160F27FFD5A60043E7CA /* widekyc.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE11160D27FFD5A60043E7CA /* widekyc.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		40F82DED623ABD6DC6FD7ACB /* Pods_sdkDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21175D80B610DCC8E61A8EA /* Pods_sdkDemo.framework */; };
 		CE62490027F17AA300688717 /* img_back.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6248FC27F17AA300688717 /* img_back.png */; };
 		CE62490127F17AA300688717 /* img_flash_active.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6248FD27F17AA300688717 /* img_flash_active.png */; };
 		CE62490227F17AA300688717 /* config.json in Resources */ = {isa = PBXBuildFile; fileRef = CE6248FE27F17AA300688717 /* config.json */; };
@@ -20,27 +19,12 @@
 		CE983D8627EC0B3200F895C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE983D8427EC0B3200F895C4 /* LaunchScreen.storyboard */; };
 		CE983D9327EC133D00F895C4 /* popUpProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE983D9227EC133D00F895C4 /* popUpProduct.swift */; };
 		CE983D9527EC157400F895C4 /* LocalRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE983D9427EC157400F895C4 /* LocalRequest.swift */; };
-		E39076684357AD7CAE4DAF97 /* Pods_sdkDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F0A5F42E83E35736377843 /* Pods_sdkDemo.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		CE11161027FFD5A60043E7CA /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				CE11160F27FFD5A60043E7CA /* widekyc.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		5E40CA89C0A989A8F1E87501 /* Pods-sdkDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sdkDemo.debug.xcconfig"; path = "Target Support Files/Pods-sdkDemo/Pods-sdkDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		99F0A5F42E83E35736377843 /* Pods_sdkDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sdkDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE11160D27FFD5A60043E7CA /* widekyc.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = widekyc.framework; path = "../../../../widekyc-mobile-sdk/ios/widekyc/Build/Products/Debug-universal/widekyc.framework"; sourceTree = "<group>"; };
+		AA3A201B75348172C1F76D16 /* Pods-sdkDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sdkDemo.debug.xcconfig"; path = "Target Support Files/Pods-sdkDemo/Pods-sdkDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		AFB83601653BF3FCB287FCB5 /* Pods-sdkDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sdkDemo.release.xcconfig"; path = "Target Support Files/Pods-sdkDemo/Pods-sdkDemo.release.xcconfig"; sourceTree = "<group>"; };
+		B21175D80B610DCC8E61A8EA /* Pods_sdkDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sdkDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6248FC27F17AA300688717 /* img_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_back.png; sourceTree = "<group>"; };
 		CE6248FD27F17AA300688717 /* img_flash_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_flash_active.png; sourceTree = "<group>"; };
 		CE6248FE27F17AA300688717 /* config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = config.json; sourceTree = "<group>"; };
@@ -54,7 +38,6 @@
 		CE983D8727EC0B3200F895C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE983D9227EC133D00F895C4 /* popUpProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popUpProduct.swift; sourceTree = "<group>"; };
 		CE983D9427EC157400F895C4 /* LocalRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRequest.swift; sourceTree = "<group>"; };
-		F89DDBB033DBE75E2B985673 /* Pods-sdkDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sdkDemo.release.xcconfig"; path = "Target Support Files/Pods-sdkDemo/Pods-sdkDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E39076684357AD7CAE4DAF97 /* Pods_sdkDemo.framework in Frameworks */,
-				CE11160E27FFD5A60043E7CA /* widekyc.framework in Frameworks */,
+				40F82DED623ABD6DC6FD7ACB /* Pods_sdkDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,8 +55,8 @@
 		3FA7868696755F3B046CE9F7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5E40CA89C0A989A8F1E87501 /* Pods-sdkDemo.debug.xcconfig */,
-				F89DDBB033DBE75E2B985673 /* Pods-sdkDemo.release.xcconfig */,
+				AA3A201B75348172C1F76D16 /* Pods-sdkDemo.debug.xcconfig */,
+				AFB83601653BF3FCB287FCB5 /* Pods-sdkDemo.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -127,8 +109,7 @@
 		CE983D8D27EC0B6500F895C4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CE11160D27FFD5A60043E7CA /* widekyc.framework */,
-				99F0A5F42E83E35736377843 /* Pods_sdkDemo.framework */,
+				B21175D80B610DCC8E61A8EA /* Pods_sdkDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -140,13 +121,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE983D8A27EC0B3200F895C4 /* Build configuration list for PBXNativeTarget "sdkDemo" */;
 			buildPhases = (
-				CA2CC3366A0C6C9A04A4947E /* [CP] Check Pods Manifest.lock */,
+				C572948C891966D7A0B031F3 /* [CP] Check Pods Manifest.lock */,
 				CE983D7227EC0B3100F895C4 /* Sources */,
 				CE983D7327EC0B3100F895C4 /* Frameworks */,
 				CE983D7427EC0B3100F895C4 /* Resources */,
-				8C6F85BB6EE0C9A34497C9D0 /* [CP] Embed Pods Frameworks */,
-				810DDF051D67A653BE37AB28 /* [CP] Copy Pods Resources */,
-				CE11161027FFD5A60043E7CA /* Embed Frameworks */,
+				2F91BEF22468F7DD321F46E5 /* [CP] Embed Pods Frameworks */,
+				7364D644A729EAE20BFDDD7B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -208,24 +188,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		810DDF051D67A653BE37AB28 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-sdkDemo/Pods-sdkDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-sdkDemo/Pods-sdkDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-sdkDemo/Pods-sdkDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8C6F85BB6EE0C9A34497C9D0 /* [CP] Embed Pods Frameworks */ = {
+		2F91BEF22468F7DD321F46E5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -242,7 +205,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-sdkDemo/Pods-sdkDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CA2CC3366A0C6C9A04A4947E /* [CP] Check Pods Manifest.lock */ = {
+		7364D644A729EAE20BFDDD7B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sdkDemo/Pods-sdkDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sdkDemo/Pods-sdkDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-sdkDemo/Pods-sdkDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C572948C891966D7A0B031F3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -418,7 +398,7 @@
 		};
 		CE983D8B27EC0B3200F895C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E40CA89C0A989A8F1E87501 /* Pods-sdkDemo.debug.xcconfig */;
+			baseConfigurationReference = AA3A201B75348172C1F76D16 /* Pods-sdkDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -458,7 +438,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = id.co.widetechnologies.mobile.sdkDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -472,7 +452,7 @@
 		};
 		CE983D8C27EC0B3200F895C4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F89DDBB033DBE75E2B985673 /* Pods-sdkDemo.release.xcconfig */;
+			baseConfigurationReference = AFB83601653BF3FCB287FCB5 /* Pods-sdkDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -512,7 +492,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = id.co.widetechnologies.mobile.sdkDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
