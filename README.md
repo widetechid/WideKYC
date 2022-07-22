@@ -47,7 +47,7 @@ Here is the architecture of our SDK integration.
 
 SDK integration consists of two parts:
 
-* Client-side integration: integrate the WideKYC SDK into the merchant application. The Wide SDK provides a ready set of screens and tools for both iOS and Android applications to capture required user data such as face images, identity document images, and so on. By integrating the Wide SDK, you can easily create a friendly interaction experience for your users in terms of:
+* Client-side integration: integrate the WideKYC SDK into the merchant application. The WideKYC SDK provides a ready set of screens and tools for both iOS and Android applications to capture required user data such as face images, identity document images, and so on. By integrating the WideKYC SDK, you can easily create a friendly interaction experience for your users in terms of:
   * Well designed UI to guide your users through the simple and easy business process
   * High success rate and high security with multiple algorithms applied
   * Simplified integration process by directly uploading images to the WideKYC service to process
@@ -67,10 +67,10 @@ The following diagram illustrates the whole interaction flow when a WideKYC serv
 5. With the meta-information and product info as an input, the merchant server calls the initialize API to obtain the configuration information, which includes parameters about SDK connection and behavior.
 6. The Wide server performs a usability check based on the meta-information. If the check is passed, the Wide server returns the configuration information to the merchant server.
 7. The merchant server returns the configuration information to the merchant application.
-8. The merchant application starts the Wide SDK with the configuration information that is obtained in Step 7.
-9. The Wide SDK interacts with the user, captures required data (for example, ID images), and uploads it to the Wide server for verification. There might be multiple rounds of interaction between the Wide SDK and Wide server.
-10. The Wide server performs related checks on the uploaded user data, and returns the transaction status to the Wide SDK. If all the corresponding checks are passed, a result code that indicates success is returned to the Wide SDK; otherwise, the process might be interrupted and further interactions are needed between the user and the Wide SDK.
-11. The Wide SDK notifies the merchant application that the transaction is completed.
+8. The merchant application starts the WideKYC SDK with the configuration information that is obtained in Step 7.
+9. The WideKYC SDK interacts with the user, captures required data (for example, ID images), and uploads it to the Wide server for verification. There might be multiple rounds of interaction between the WideKYC SDK and Wide server.
+10. The Wide server performs related checks on the uploaded user data, and returns the transaction status to the WideKYC SDK. If all the corresponding checks are passed, a result code that indicates success is returned to the WideKYC SDK; otherwise, the process might be interrupted and further interactions are needed between the user and the WideKYC SDK.
+11. The WideKYC SDK notifies the merchant application that the transaction is completed.
 12. The merchant application syncs with the merchant server that the transaction is completed and starts a double check on the transaction details.
 13. The merchant server calls the checkResult API to check the transaction details with the Wide server again.
 14. The Wide server returns the transaction details to the merchant server.
