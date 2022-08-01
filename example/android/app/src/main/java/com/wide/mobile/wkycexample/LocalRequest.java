@@ -10,7 +10,7 @@ import java.net.URL;
 
 public class LocalRequest {
     final static String TAG = "LocalRequest";
-    public String request(String requestUrl, String requestData) throws Exception {
+    public String request(String requestUrl, String requestData, String token) throws Exception {
         try {
             URL url = new URL(requestUrl);
             HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
@@ -21,7 +21,9 @@ public class LocalRequest {
             httpConn.setRequestProperty("Content-Type", "application/json");
             httpConn.setRequestProperty("Connection", "Keep-Alive");
             httpConn.setRequestProperty("Charset", "UTF-8");
-
+            if(token != null){
+                httpConn.setRequestProperty("token", token);
+            }
             httpConn.connect();
 
             DataOutputStream dos = new DataOutputStream(httpConn.getOutputStream());

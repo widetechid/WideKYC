@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InitApiActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="20dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="20dp">
+
+            <ImageView
+                android:id="@+id/back"
+                android:background="@drawable/ic_back"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:scaleType="centerCrop"
+                android:onClick="goBack"/>
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingRight="45dp"
+                android:textAlignment="center"
+                android:textColor="@color/wideBlue"
+                android:fontFamily="@font/montserrat"
+                android:textSize="18dp"
+                android:text="API Interface Example"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/textColor"
+                android:fontFamily="@font/montserrat"
+                android:paddingHorizontal="15dp"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                android:text="Host"/>
+            <EditText
+                android:id="@+id/init_host"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/wkyc_layout_input_bg"
+                android:textColor="@android:color/darker_gray"
+                android:fontFamily="@font/montserrat"
+                android:textSize="14dp"
+                android:text="http://34.101.86.149:9090"
+                android:padding="12dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/textColor"
+                android:fontFamily="@font/montserrat"
+                android:paddingHorizontal="15dp"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                android:text="API"/>
+            <EditText
+                android:id="@+id/init_api"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/wkyc_layout_input_bg"
+                android:textColor="@android:color/darker_gray"
+                android:fontFamily="@font/montserrat"
+                android:textSize="14dp"
+                android:text="/api/initialize"
+                android:padding="12dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/textColor"
+                android:fontFamily="@font/montserrat"
+                android:paddingHorizontal="15dp"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                android:text="Product"/>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/wkyc_layout_input_bg">
+                <Spinner
+                    android:id="@+id/productLists"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:textColor="@android:color/darker_gray"
+                    android:fontFamily="@font/montserrat"
+                    android:spinnerMode="dialog"
+                    android:textSize="14dp"/>
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/startApiInterface"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/montserrat"
+            android:background="@drawable/wkyc_layout_input_bg"
+            android:backgroundTint="@color/wideBlue"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:onClick="startApiInterface"
+            android:text="Start"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/dimBlack"
+        android:visibility="invisible"
+        android:id="@+id/mainLoader"
+        android:gravity="center">
+        <ProgressBar
+            style="@style/Base.Widget.AppCompat.ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:indeterminate="true"
+            android:indeterminateTintMode="src_atop"
+            android:indeterminateTint="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
+</FrameLayout>
