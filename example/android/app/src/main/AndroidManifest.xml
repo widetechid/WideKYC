@@ -14,6 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:extractNativeLibs="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.KYCDemo">
         <activity
             android:name="com.wide.mobile.wkycexample.ExampleActivity"
