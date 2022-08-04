@@ -116,14 +116,14 @@ public class MobileSDKActivity extends AppCompatActivity {
             @Override
             public void run() {
                 String result = initRequest();
-                if (TextUtils.isEmpty(result)) {
-                    showToast("network exception, please try again");
+                if (result.length() == 3) {
+                    showToast("network exception, please try again. error code : "+result);
                     return;
                 }
                 try{
                     JSONObject resultJson = new JSONObject(result);
                     if(resultJson.getString("statusCode").equalsIgnoreCase("ERROR")){
-                        showToast("Service Error");
+                        showToast(resultJson.getString("responseStatusDetails"));
                     }
                     else{
                         /**

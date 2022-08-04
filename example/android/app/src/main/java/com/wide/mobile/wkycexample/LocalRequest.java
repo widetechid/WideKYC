@@ -46,6 +46,9 @@ public class LocalRequest {
                 Log.d(TAG, requestUrl +", responds : " + sb.toString());
                 return sb.toString();
             }
+            else{
+                return resultCode+"";
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
