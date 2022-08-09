@@ -1,4 +1,4 @@
-package com.wide.mobile.wkycexample;
+package com.wide.mobile.wkycdemo;
 
 import android.content.Context;
 import android.content.Intent;

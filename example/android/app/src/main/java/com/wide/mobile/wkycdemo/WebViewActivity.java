@@ -1,4 +1,4 @@
-package com.wide.mobile.wkycexample;
+package com.wide.mobile.wkycdemo;
 
 import android.Manifest;
 import android.app.Activity;

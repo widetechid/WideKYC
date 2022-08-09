@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.wide.mobile.wkycexample">
+    package="com.wide.mobile.wkycdemo">
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
@@ -17,7 +17,7 @@
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.KYCDemo">
         <activity
-            android:name="com.wide.mobile.wkycexample.ExampleActivity"
+            android:name="com.wide.mobile.wkycdemo.ExampleActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.KYCDemo.NoActionBar">
@@ -27,17 +27,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.wide.mobile.wkycexample.MobileSDKActivity"
+            android:name="com.wide.mobile.wkycdemo.MobileSDKActivity"
             android:exported="true"
             android:theme="@style/Theme.KYCDemo.NoActionBar">
         </activity>
         <activity
-            android:name="com.wide.mobile.wkycexample.InitApiActivity"
+            android:name="com.wide.mobile.wkycdemo.InitApiActivity"
             android:exported="true"
             android:theme="@style/Theme.KYCDemo.NoActionBar">
         </activity>
         <activity
-            android:name="com.wide.mobile.wkycexample.WebViewActivity"
+            android:name="com.wide.mobile.wkycdemo.WebViewActivity"
             android:exported="true"
             android:theme="@style/Theme.KYCDemo.NoActionBar">
         </activity>

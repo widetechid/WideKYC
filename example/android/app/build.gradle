@@ -6,7 +6,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.wide.mobile.kycdemo"
+        applicationId "com.wide.mobile.wkycdemo"
         minSdk 24
         targetSdk 31
         versionCode 1
