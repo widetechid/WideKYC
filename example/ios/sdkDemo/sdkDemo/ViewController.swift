@@ -28,8 +28,6 @@ class ViewController:UIViewController,  UITextFieldDelegate, delegateProduct {
     var wkycid = WKYCID()
     var clientConfig = ClientConfig()
     
-    var fileJson = NSMutableDictionary()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,7 +37,6 @@ class ViewController:UIViewController,  UITextFieldDelegate, delegateProduct {
         txtProduct.delegate = self
         txtServiceLevel.delegate = self
 
-        titleApp.textColor = .black
         titleApp.text = "Demo"
         
 
@@ -74,7 +71,6 @@ class ViewController:UIViewController,  UITextFieldDelegate, delegateProduct {
         txtServiceLevel.addTarget(self, action: #selector(clickServiceLevel), for: .touchDown)
     }
     
-    
     @objc func clickServiceLevel(textField: UITextField) {
         if(textField == txtServiceLevel){
             NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -106,7 +102,7 @@ class ViewController:UIViewController,  UITextFieldDelegate, delegateProduct {
             constrainBtnStart.constant = 114
             lbServiceLevel.isHidden = false
             txtServiceLevel.isHidden = false
-            txtServiceLevel.text = WKYCConstants.SL_PASSIVE_LIVENESS_MED
+            txtServiceLevel.text = "62000" //WKYCConstants.SL_PASSIVE_LIVENESS_MED
         }
         else if txtProduct.text == WKYCConstants.ID_VALIDATION{
             constrainBtnStart.constant = 114
@@ -118,7 +114,7 @@ class ViewController:UIViewController,  UITextFieldDelegate, delegateProduct {
             constrainBtnStart.constant = 114
             lbServiceLevel.isHidden = false
             txtServiceLevel.isHidden = false
-            txtServiceLevel.text = WKYCConstants.SL_ID_RECOGNIZE_ENT
+            txtServiceLevel.text = "62010" //WKYCConstants.SL_ID_RECOGNIZE_ENT
         }
         else{
             constrainBtnStart.constant = 20
@@ -131,6 +127,13 @@ class ViewController:UIViewController,  UITextFieldDelegate, delegateProduct {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+//        if #available(iOS 13, *) {
+//            print("tes masuk")
+//            let appearance = UINavigationBarAppearance()
+//            appearance.backgroundColor = .white
+//            UINavigationBar.appearance().standardAppearance = appearance
+//            UINavigationBar.appearance().scrollEdgeAppearance = appearance
+//        }
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool
@@ -187,12 +190,11 @@ class ViewController:UIViewController,  UITextFieldDelegate, delegateProduct {
                     request.wkycConfig = wkycConfig
                     let dictJson = NSMutableDictionary()
                     dictJson[WKYCConstants.LOCALE] = WKYCConstants.LANG_EN
-                    if getFileJson().count != 0{
-                       dictJson[WKYCConstants.UI_CONFIG_PATH] = getFileJson()
-                    }
+                    dictJson[WKYCConstants.UI_CONFIG_PATH] = "config.json"
                     clientConfig.clientConfig = dictJson
                     request.clientConfig = clientConfig
                     request.wkycID = wkycid
+                    
                     
                      do {
                          try  WKYC.sharedInstance.start(request: request,
@@ -208,9 +210,12 @@ class ViewController:UIViewController,  UITextFieldDelegate, delegateProduct {
                                      * String imageBase64 = getBase64FromPath(imagePath);
                                      */
                                     let Url = URL(string: String(format: "%@", wkycConfig.gatewayUrl!))
-
+                                    
+                                    print("value:",value.data)
+                                    
                                             LocalRequest().request(with: Url, bodyDic: value.data, completionHandler: {[self] result, error  in
                                                  if result?.count != 0{
+                                                     print("result:",result as Any)
                                                      let content = result!.object(forKey: "content") as? NSDictionary ?? [:]
                                                      let trxId = content.object(forKey: WKYCConstants.TRX_ID) as? String ?? ""
                                                       
@@ -251,6 +256,7 @@ class ViewController:UIViewController,  UITextFieldDelegate, delegateProduct {
             WKYCConstants.TRX_ID : transactionId,
         ] as [String:Any]
         
+        print("_paramDicCheckResult:",_paramDicCheckResult)
         
         LocalRequest().request(with: Url, bodyDic: _paramDicCheckResult, completionHandler: { [self] result, error  in
                  if result?.count != 0{
@@ -281,16 +287,21 @@ class ViewController:UIViewController,  UITextFieldDelegate, delegateProduct {
         
             let json = JSON(wkyc.getMetaInfo())
             let metaInfo = String(data: try! JSONEncoder().encode(json), encoding: .utf8)
-
+        
+        
              let _paramDic = [
                 WKYCConstants.META_INFO: metaInfo as Any,
+//                "{\"osVersion\":\"15.5\",\"deviceId\":\"1973BC92-EA55-46D8-B8AE-E79B82FC1F60\",\"deviceModel\":\"Assalamua’laikum ughtie !\",\"appName\":\"com.wide.wide_wallet\",\"appVersion\":\"1.0.0\",\"deviceType\":\"ios\"}",
                 WKYCConstants.PRODUCT: txtProduct.text!,
                 WKYCConstants.SERVICE_LEVEL : txtServiceLevel.text!
              ] as [String: AnyObject]
         
+        print("params",_paramDic)
+        
         LocalRequest().request(with: Url, bodyDic: _paramDic, completionHandler: {[self] result, error  in
                  loadingDismis()
                  if result?.count != 0{
+                     print("result",result)
                      completion(result!, nil)
                  }
                 else{
@@ -298,25 +309,7 @@ class ViewController:UIViewController,  UITextFieldDelegate, delegateProduct {
                 }
               })
     }
-    
-    func getFileJson() -> NSDictionary{
-        if let path = Bundle.main.path(forResource: "config", ofType: "json") {
-            do {
-                  let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                  let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
-                  fileJson.addEntries(from: jsonResult as! [AnyHashable : Any])
 
-                if fileJson.count != 0{
-                    return fileJson
-                }
-              } catch {
-                   // handle error
-              }
-        }
-        
-        return NSDictionary()
-    }
-    
     func ResultDelegate(dictData: NSDictionary) {
         showAlertMessage(vc: self, titleStr: "Warning", messageStr: String(format: "%@", dictData))
     }

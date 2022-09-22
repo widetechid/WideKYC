@@ -203,6 +203,7 @@
                             <constraint firstItem="CeB-ti-Ucq" firstAttribute="top" secondItem="Tw5-Ae-p76" secondAttribute="top" constant="170" id="pjh-zH-jcM"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="92G-cj-H1F"/>
                     <connections>
                         <outlet property="tblProduct" destination="t6G-hX-4Kt" id="bOT-wo-7NV"/>
                         <outlet property="viewTable" destination="CeB-ti-Ucq" id="wGQ-SP-dez"/>

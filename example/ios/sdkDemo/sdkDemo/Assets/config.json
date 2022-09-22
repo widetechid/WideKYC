@@ -1,16 +1,16 @@
 {
   "general": {
     "color": {
-      "title_bar_color": "#ff000000",
-      "title_text_color": "#ffffffff",
-      "title_button_color": "#ffffffff",
-      "liveness_instruction_color": "#ff000000",
-      "id_recognize_instruction_color": "#ffffffff",
-      "id_validation_label_color": "#ff000000",
-      "id_validation_button_color": "#ff000000",
-      "id_validation_button_text_color": "#ffffffff",
-      "error_popup_text_color": "#ff000000",
-      "error_popup_button_text_color": "#ff000000"
+      "title_bar_color": "#000000",
+      "title_text_color": "#ffffff",
+      "title_button_color": "#ffffff",
+      "liveness_instruction_color": "#000000",
+      "id_recognize_instruction_color": "#ffffff",
+      "id_validation_label_color": "#000000",
+      "id_validation_button_color": "#000000",
+      "id_validation_button_text_color": "#ffffff",
+      "error_popup_text_color": "#000000",
+      "error_popup_button_text_color": "#000000"
     },
     "image": {
       "title_bar_back": "img_back.png",

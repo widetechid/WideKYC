@@ -2,7 +2,7 @@
 //  popUpProduct.swift
 //  sdkDemo
 //
-//  Created by H, Alfatkhu on 24/03/22.
+//  Created by Wide Technologies Indonesia, PT on 24/03/22.
 //
 
 import UIKit
