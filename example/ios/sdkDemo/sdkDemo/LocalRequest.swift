@@ -24,7 +24,7 @@ class LocalRequest : NSObject{
        let session = URLSession.shared
         
         
-        let dataTask = session.dataTask(with: request! as URLRequest) { [self] datas, response, error in
+        let dataTask = session.dataTask(with: request! as URLRequest) { datas, response, error in
             let httpResponse = response as? HTTPURLResponse
             if httpResponse?.statusCode == 200 {
                 do {
