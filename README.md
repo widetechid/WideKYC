@@ -6,7 +6,8 @@
 
 <div align="center">
 	
-<a href="">![SDK Version](https://img.shields.io/badge/WideKYC-1.1.2-brightgreen)</a>
+<a href="">![Android SDK Version](https://img.shields.io/badge/Android-1.1.2-brightgreen)</a>
+<a href="">![iOS SDK Version](https://img.shields.io/badge/iOS-1.1.3-brightgreen)</a>
 <a href="">![GitHub language count](https://img.shields.io/github/languages/count/widetechid/widekyc)</a>
 <a href="">![GitHub top language](https://img.shields.io/github/languages/top/widetechid/widekyc)</a>
 <a href="">![GitHub repo size](https://img.shields.io/github/repo-size/widetechid/widekyc)</a>
