@@ -95,6 +95,6 @@ Please refer to this wiki page for [**Android SDK Reference**][android-sdk-refer
 
 ## API Reference
 
-Please refer to this wiki page for [**API Reference**][api-reference].
+Please refer to this wiki page for [**SDK API Reference**][sdk-api-reference].
 
-[api-reference]: https://github.com/widetechid/WideKYC/wiki/API-Reference
+[sdk-api-reference]: https://github.com/widetechid/WideKYC/wiki/SDK-API-Reference
