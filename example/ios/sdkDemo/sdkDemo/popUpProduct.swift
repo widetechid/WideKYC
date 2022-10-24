@@ -26,7 +26,7 @@ class popUpProduct: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        arrData = ["00", "01", "02", "03", "04","05", "06"]
+        arrData = ["00", "01", "02"]
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.7)
         tblProduct.delegate = self
         tblProduct.dataSource = self

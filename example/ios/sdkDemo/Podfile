@@ -7,8 +7,7 @@ target 'sdkDemo' do
   use_frameworks!
   
   # Pods for sdkDemo
-  pod 'widekyc'
+  pod 'widekyc', '1.1.2'
   pod 'TensorFlowLiteSwift'
-  pod 'SVProgressHUD'
-  
+
 end

@@ -61,7 +61,7 @@ PODS:
   - nanopb/decode (2.30909.0)
   - nanopb/encode (2.30909.0)
   - PromisesObjC (2.1.1)
-  - Protobuf (3.21.6)
+  - Protobuf (3.21.7)
   - SVProgressHUD (2.2.5)
   - SwiftyJSON (5.0.1)
   - TensorFlowLiteC (2.10.0):
@@ -78,9 +78,8 @@ PODS:
     - SwiftyJSON
 
 DEPENDENCIES:
-  - SVProgressHUD
   - TensorFlowLiteSwift
-  - widekyc
+  - widekyc (= 1.1.2)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -118,13 +117,13 @@ SPEC CHECKSUMS:
   MLKitVision: 26da299aef93291f24f5200e8372919f73abf3b5
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
-  Protobuf: e7846f61e8542750cf311385fc633c1d00928f9f
+  Protobuf: f4128517d7a42302e106cc3afe614ee3a7513e94
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   TensorFlowLiteC: edf19548f50a1552e43dbd6906f5618a478bd038
   TensorFlowLiteSwift: fc26e0e9d63c8a98ff61187457635e660d787561
   widekyc: 229e344428085ff283196db6d25361312725f325
 
-PODFILE CHECKSUM: c3aa760c2b7bd7045c29087a2f36297bad4ee151
+PODFILE CHECKSUM: 78ff3140382cdbf7b4d2d69b785a9ba75399da6f
 
 COCOAPODS: 1.11.2
