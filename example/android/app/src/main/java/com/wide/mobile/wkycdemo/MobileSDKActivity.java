@@ -71,7 +71,6 @@ public class MobileSDKActivity extends AppCompatActivity {
                 WKYCConstants.PASSIVE_LIVENESS,
                 WKYCConstants.ID_RECOGNIZE,
                 WKYCConstants.ID_VALIDATION,
-                WKYCConstants.REAL_ID,
         };
         ArrayAdapter adapter = new ArrayAdapter(context, R.layout.wkyc_product_list, items);
         productLists.setAdapter(adapter);
