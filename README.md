@@ -5,14 +5,14 @@
 </h1>
 
 <div align="center">
-	
+
 <a href="">![Android SDK Version](https://img.shields.io/badge/Android-1.1.2-brightgreen)</a>
-<a href="">![iOS SDK Version](https://img.shields.io/badge/iOS-1.1.3-brightgreen)</a>
+<a href="">![iOS SDK Version](https://img.shields.io/badge/iOS-1.1.1-brightgreen)</a>
 <a href="">![GitHub language count](https://img.shields.io/github/languages/count/widetechid/widekyc)</a>
 <a href="">![GitHub top language](https://img.shields.io/github/languages/top/widetechid/widekyc)</a>
 <a href="">![GitHub repo size](https://img.shields.io/github/repo-size/widetechid/widekyc)</a>
 <a href="">![GitHub last commit](https://img.shields.io/github/last-commit/widetechid/widekyc)</a>
-	
+
 </div>
 
 All in one eKYC (Electronic Know Your Customer) solution available for android and ios. Wide Technologies provides an SDK for you to implement integration with your native mobile application. This document provides you with an overview of the SDK integration in terms of its architecture, interaction flow, available products, and general integration process.
@@ -29,10 +29,9 @@ All in one eKYC (Electronic Know Your Customer) solution available for android a
 ## Available Products
 WideKYC SDK integration can be applied to the following products:
 
-* Liveness Detection 
+* Liveness Detection
 * ID Recognize _(OCR)_
 * ID Validation _(by Dukcapil - Population and Civil Registration Agency)_
-* RealID _(ID Recognize -> Liveness Detection -> ID Validation) (beta)_
 
 <p float="left">
 <img src="https://github.com/widetechid/WideKYC/blob/main/assets/passiveLiveness.png" alt="00" width="250"/>
@@ -40,7 +39,7 @@ WideKYC SDK integration can be applied to the following products:
 <img src="https://github.com/widetechid/WideKYC/blob/main/assets/idValidation.png" alt="02" width="250"/>
 </p>
 
-## Integration Architecture	
+## Integration Architecture
 Here is the architecture of our SDK integration.
 
 ![integrationChart](https://github.com/widetechid/WideKYC/blob/main/assets/integrationChart.jpeg)
@@ -54,7 +53,7 @@ SDK integration consists of two parts:
   * Simplified integration process by directly uploading images to the WideKYC service to process
 
 * Server-side integration: Expose endpoints for your (merchant) application in your (merchant) server so that the merchant application can interact with the merchant server, which then accesses the WideKYC API to initialize a transaction and double-check verification results.
-	
+
 ## Interaction Flow
 The following diagram illustrates the whole interaction flow when a WideKYC service is started through the mobile application.
 
