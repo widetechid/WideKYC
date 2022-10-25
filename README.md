@@ -15,7 +15,7 @@
 
 </div>
 
-All in one eKYC (Electronic Know Your Customer) solution available for android and ios. Wide Technologies provides an SDK for you to implement integration with your native mobile application. This document provides you with an overview of the SDK integration in terms of its architecture, interaction flow, available products, and general integration process.
+All in one eKYC (Electronic Know Your Customer) solution available for android and ios. Wide Technologies Indonesia provides an SDK for you to implement integration with your native mobile application. This document provides you with an overview of the SDK integration in terms of its architecture, interaction flow, available products, and general integration process.
 
 ## Contents
 
@@ -65,18 +65,18 @@ The following diagram illustrates the whole interaction flow when a WideKYC serv
 3. The WideKYC SDK returns the meta-information to the merchant application.
 4. The merchant application initializes a transaction and passes the meta-information and product type to the merchant server.
 5. With the meta-information and product info as an input, the merchant server calls the initialize API to obtain the configuration information, which includes parameters about SDK connection and behavior.
-6. The Wide server performs a usability check based on the meta-information. If the check is passed, the Wide server returns the configuration information to the merchant server.
+6. The WideKYC server performs a usability check based on the meta-information. If the check is passed, the WideKYC server returns the configuration information to the merchant server.
 7. The merchant server returns the configuration information to the merchant application.
 8. The merchant application starts the WideKYC SDK with the configuration information that is obtained in Step 7.
 9. The WideKYC SDK interacts with the user, captures required data (for example, ID images), and uploads it to the Wide server for verification. There might be multiple rounds of interaction between the WideKYC SDK and Wide server.
-10. The Wide server performs related checks on the uploaded user data, and returns the transaction status to the WideKYC SDK. If all the corresponding checks are passed, a result code that indicates success is returned to the WideKYC SDK; otherwise, the process might be interrupted and further interactions are needed between the user and the WideKYC SDK.
+10. The WideKYC server performs related checks on the uploaded user data, and returns the transaction status to the WideKYC SDK. If all the corresponding checks are passed, a result code that indicates success is returned to the WideKYC SDK; otherwise, the process might be interrupted and further interactions are needed between the user and the WideKYC SDK.
 11. The WideKYC SDK notifies the merchant application that the transaction is completed.
 12. The merchant application syncs with the merchant server that the transaction is completed and starts a double check on the transaction details.
-13. The merchant server calls the checkResult API to check the transaction details with the Wide server again.
-14. The Wide server returns the transaction details to the merchant server.
+13. The merchant server calls the checkResult API to check the transaction details with the WideKYC server again.
+14. The WideKYC server returns the transaction details to the merchant server.
     Note: To ensure information security, sensitive information such as captured face images is only returned to the merchant server.
 
-15. The merchant server filters the transaction details that are returned from the Wide server and returns the information that is not sensitive to the merchant application.
+15. The merchant server filters the transaction details that are returned from the WideKYC server and returns the information that is not sensitive to the merchant application.
 16. The merchant application informs the user that the process is completed.
 
 
