@@ -23,8 +23,7 @@ All in one eKYC (Electronic Know Your Customer) solution available for android a
 - [Integration Architecture](#integration-architecture)
 - [Interaction Flow](#interaction-flow)
 - [Integration Process](#integration-process)
-- [SDK Reference](#sdk-reference)
-- [API Reference](#api-reference)
+- [Reference](#reference)
 
 ## Available Products
 WideKYC SDK integration can be applied to the following products:
@@ -82,20 +81,18 @@ The following diagram illustrates the whole interaction flow when a WideKYC serv
 
 ## Integration Process
 
-Please refer to this wiki page for [**Integration Process**][integration-process].
+* [**SDK Integration Process**][sdk-integration-process].
+* [**Merchant Server Integration Process**][merchant-server-integration-process].
 
-[integration-process]: https://github.com/widetechid/WideKYC/wiki/Integration-Process
+[sdk-integration-process]: https://github.com/widetechid/WideKYC/wiki/SDK-Integration-Process
+[merchant-server-integration-process]: https://github.com/widetechid/WideKYC/wiki/Merchant-Server-Integration-Process
 
-## SDK Reference
+## Reference
 
-Please refer to this wiki page for [**Android SDK Reference**][android-sdk-reference] and [**iOS SDK Reference**][ios-sdk-reference].
-
-[android-sdk-reference]: https://github.com/widetechid/WideKYC/wiki/SDK-Reference-(Android)
-[ios-sdk-reference]: https://github.com/widetechid/WideKYC/wiki/SDK-Reference-(iOS)
-
-## API Reference
-
-Please refer to this wiki page for [**SDK API Reference**][sdk-api-reference].
+* [**SDK API Reference**][sdk-api-reference].
+* [**Android SDK Reference**][android-sdk-reference].
+* [**iOS SDK Reference**][ios-sdk-reference].
 
 [sdk-api-reference]: https://github.com/widetechid/WideKYC/wiki/SDK-API-Reference
-
+[android-sdk-reference]: https://github.com/widetechid/WideKYC/wiki/SDK-Reference-(Android)
+[ios-sdk-reference]: https://github.com/widetechid/WideKYC/wiki/SDK-Reference-(iOS)
