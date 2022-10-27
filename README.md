@@ -87,6 +87,14 @@ The following diagram illustrates the whole interaction flow when a WideKYC serv
 [sdk-integration-process]: https://github.com/widetechid/WideKYC/wiki/SDK-Integration-Process
 [merchant-server-integration-process]: https://github.com/widetechid/WideKYC/wiki/Merchant-Server-Integration-Process
 
+## API Documentation
+
+* [**WideKYC API**](widekyc-api)
+* [**Merchant Specific API**](merchant-specific-api)
+
+[widekyc-api]: https://github.com/widetechid/WideKYC/wiki/WideKYC-API
+[merchant-specific-api]: https://github.com/widetechid/WideKYC/wiki/Merchant-Specific-API
+
 ## Reference
 
 * [**Product Reference**][product-reference].
