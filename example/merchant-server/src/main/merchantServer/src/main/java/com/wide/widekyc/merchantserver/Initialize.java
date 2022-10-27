@@ -1,4 +1,4 @@
-package com.wide.widekyc.merchantserver;
+package com.wide.ekycaggr.merchantserver;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
@@ -28,6 +28,7 @@ public class Initialize extends HttpConnection{
         int responseCode = 0;
 
         try {
+            requestParams.setTransactionRefNo("<mandatory_unique_ref_no>");
             ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
             String json = ow.writeValueAsString(requestParams);
 
