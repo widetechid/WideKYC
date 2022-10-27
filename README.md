@@ -89,10 +89,10 @@ The following diagram illustrates the whole interaction flow when a WideKYC serv
 
 ## Reference
 
-* [**SDK API Reference**][sdk-api-reference].
+* [**Product Reference**][product-reference].
 * [**Android SDK Reference**][android-sdk-reference].
 * [**iOS SDK Reference**][ios-sdk-reference].
 
-[sdk-api-reference]: https://github.com/widetechid/WideKYC/wiki/SDK-API-Reference
+[product-reference]: https://github.com/widetechid/WideKYC/wiki/Product-Reference
 [android-sdk-reference]: https://github.com/widetechid/WideKYC/wiki/SDK-Reference-(Android)
 [ios-sdk-reference]: https://github.com/widetechid/WideKYC/wiki/SDK-Reference-(iOS)
