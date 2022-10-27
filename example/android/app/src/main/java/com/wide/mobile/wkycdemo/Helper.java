@@ -20,11 +20,23 @@ public class Helper {
 
     public static String getHostInput(Context context){
         SharedPreferences prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
-        return prefs.getString("host", "host_url");//"No name defined" is the default value.
+        String host = prefs.getString("host", "http://[host_ip]:[host_port]/");
+        if(host.trim().length()==0){
+            return "http://[host_ip]:[host_port]/";
+        }
+        else{
+            return host;
+        }
     }
 
     public static String getApiInput(Context context){
         SharedPreferences prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
-        return prefs.getString("api", "api_name");//"No name defined" is the default value.
+        String api = prefs.getString("api", "[api_name]");
+        if(api.trim().length()==0){
+            return "[api_name]";
+        }
+        else{
+            return api;
+        }
     }
 }

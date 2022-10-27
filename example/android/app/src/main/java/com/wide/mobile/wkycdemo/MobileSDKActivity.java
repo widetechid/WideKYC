@@ -174,7 +174,7 @@ public class MobileSDKActivity extends AppCompatActivity {
                         final WKYCRequest request = new WKYCRequest();
                         request.wkycConfig = new Gson().fromJson(resultJson.getString("content"), WKYCConfig.class);
                         request.clientConfig = new HashMap<>();
-                        request.clientConfig.put(WKYCConstants.LOCALE, WKYCConstants.LANG_ID);
+                        request.clientConfig.put(WKYCConstants.LOCALE, WKYCConstants.LANG_EN);
                         request.clientConfig.put(WKYCConstants.UI_CONFIG_PATH, "config.json");
                         request.wkycid = wkycid;
                         mHandler.postAtFrontOfQueue(new Runnable() {
@@ -255,7 +255,7 @@ public class MobileSDKActivity extends AppCompatActivity {
     private String initMerchant() {
         try{
             LocalRequest local = new LocalRequest();
-            String requestUrl = host.getText().toString() +"/"+api.getText().toString();
+            String requestUrl = host.getText().toString() +api.getText().toString();
             JSONObject jsonObject = new JSONObject();
             jsonObject.put(WKYCConstants.META_INFO, WKYC.getMetaInfo(context));
             jsonObject.put(WKYCConstants.PRODUCT, productLists.getSelectedItem().toString());

@@ -1,8 +1,8 @@
 {
   "general": {
     "color": {
-      "title_bar_color": "#ff000000",
-      "title_text_color": "#ffffffff",
+      "title_bar_color": "#ffffffff",
+      "title_text_color": "#ff000000",
       "title_button_color": "#ffffffff",
       "liveness_instruction_color": "#ff000000",
       "id_recognize_instruction_color": "#ff000000",
