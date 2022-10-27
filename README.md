@@ -82,8 +82,8 @@ The following diagram illustrates the whole interaction flow when a WideKYC serv
 
 ## Integration Process
 
-* [**SDK Integration Process**][sdk-integration-process].
-* [**Merchant Server Integration Process**][merchant-server-integration-process].
+* [**SDK Integration Process**][sdk-integration-process]
+* [**Merchant Server Integration Process**][merchant-server-integration-process]
 
 [sdk-integration-process]: https://github.com/widetechid/WideKYC/wiki/SDK-Integration-Process
 [merchant-server-integration-process]: https://github.com/widetechid/WideKYC/wiki/Merchant-Server-Integration-Process
@@ -98,9 +98,9 @@ The following diagram illustrates the whole interaction flow when a WideKYC serv
 
 ## Reference
 
-* [**Product Reference**][product-reference].
-* [**Android SDK Reference**][android-sdk-reference].
-* [**iOS SDK Reference**][ios-sdk-reference].
+* [**Product Reference**][product-reference]
+* [**Android SDK Reference**][android-sdk-reference]
+* [**iOS SDK Reference**][ios-sdk-reference]
 
 [product-reference]: https://github.com/widetechid/WideKYC/wiki/Product-Reference
 [android-sdk-reference]: https://github.com/widetechid/WideKYC/wiki/SDK-Reference-(Android)
