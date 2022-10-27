@@ -21,9 +21,7 @@ class LocalRequest : NSObject{
         request?.httpBody = jsonBody
         request?.setValue("application/json", forHTTPHeaderField: "Content-type")
 
-       let session = URLSession.shared
-        
-        
+        let session = URLSession.shared
         let dataTask = session.dataTask(with: request! as URLRequest) { datas, response, error in
             let httpResponse = response as? HTTPURLResponse
             if httpResponse?.statusCode == 200 {
@@ -33,25 +31,12 @@ class LocalRequest : NSObject{
                         completionHandler(jsonResult, nil)
                      }
                    } catch let error as NSError {
-                       DispatchQueue.main.async {
-                           let alert = UIAlertController(title: "Warning", message: String(format: "%@", error.localizedDescription), preferredStyle: UIAlertController.Style.alert)
-                           let alertOk = UIAlertAction(title: "ok", style: .default, handler: { action in
-
-                           })
-                           alert.addAction(alertOk)
-                           UIApplication.shared.windows.last?.rootViewController?.present(alert, animated: true)
-                       }
+                       completionHandler(nil, error)
                 }
             }
             else{
-                DispatchQueue.main.async {
-                    let alert = UIAlertController(title: "Warning", message: "Network Error", preferredStyle: UIAlertController.Style.alert)
-                    let alertOk = UIAlertAction(title: "ok", style: .default, handler: { action in
-
-                    })
-                    alert.addAction(alertOk)
-                    UIApplication.shared.windows.last?.rootViewController?.present(alert, animated: true)
-                }
+                let error = NSError(domain: "Warning", code: 400, userInfo: [NSLocalizedDescriptionKey: "Network Error"])
+                completionHandler(nil,error)
             }
         }
         dataTask.resume()

@@ -8,7 +8,6 @@ target 'sdkDemo' do
   
   # Pods for sdkDemo
   pod 'widekyc'
-  pod 'TensorFlowLiteSwift'
   pod 'SVProgressHUD'
-  
+
 end

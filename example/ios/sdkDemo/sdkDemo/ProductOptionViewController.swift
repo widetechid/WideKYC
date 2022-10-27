@@ -1,5 +1,5 @@
 //
-//  popUpProduct.swift
+//  ProductOptionViewController.swift
 //  sdkDemo
 //
 //  Created by Wide Technologies Indonesia, PT on 24/03/22.
@@ -17,7 +17,7 @@ public protocol delegateProduct {
     func ProductDelegate (str: String)
 }
 
-class popUpProduct: UIViewController, UITableViewDelegate, UITableViewDataSource  {
+class ProductOptionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     @IBOutlet weak var viewTable: UIView!
     @IBOutlet weak var tblProduct: UITableView!
     
@@ -27,7 +27,7 @@ class popUpProduct: UIViewController, UITableViewDelegate, UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         arrData = ["00", "01", "02", "03", "04","05", "06"]
-        self.view.backgroundColor = UIColor.black.withAlphaComponent(0.7)
+        self.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         tblProduct.delegate = self
         tblProduct.dataSource = self
         tblProduct.reloadData()

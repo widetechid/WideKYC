@@ -6,8 +6,8 @@
 //
 
 import UIKit
+import widekyc
 
-let appDelegate = UIApplication.shared.delegate as! AppDelegate
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,7 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
             
+        WKYC.sharedInstance.initRootVC(root: (self.window?.rootViewController)!)
+        
         return true
+    }
+    
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        return WKYC.sharedInstance.lockOrientation()
     }
 }
 
