@@ -89,8 +89,8 @@ The following diagram illustrates the whole interaction flow when a WideKYC serv
 
 ## API Documentation
 
-* [**WideKYC API**](widekyc-api)
-* [**Merchant Specific API**](merchant-specific-api)
+* [**WideKYC API**][widekyc-api]
+* [**Merchant Specific API**][merchant-specific-api]
 
 [widekyc-api]: https://github.com/widetechid/WideKYC/wiki/WideKYC-API
 [merchant-specific-api]: https://github.com/widetechid/WideKYC/wiki/Merchant-Specific-API
