@@ -37,17 +37,17 @@ WideKYC SDK integration can be applied to the following products:
 
 
 <p float="left">
-<img src="https://github.com/widetechid/WideKYC/blob/main/assets/passiveLiveness.png" alt="00" width="250"/>
-<img src="https://github.com/widetechid/WideKYC/blob/main/assets/idRecognize.png" alt="01" width="250"/>
-<img src="https://github.com/widetechid/WideKYC/blob/main/assets/idValidation.png" alt="02" width="250"/>
-<img src="https://github.com/widetechid/WideKYC/blob/main/assets/passportRecognize.png" alt="03" width="250"/>
-<img src="https://github.com/widetechid/WideKYC/blob/main/assets/kkRecognize.png" alt="04" width="250"/>
+<img src="https://github.com/widetechid/WideKYC/blob/beta/assets/passiveLiveness.png" alt="00" width="250"/>
+<img src="https://github.com/widetechid/WideKYC/blob/beta/assets/idRecognize.png" alt="01" width="250"/>
+<img src="https://github.com/widetechid/WideKYC/blob/beta/assets/idValidation.png" alt="02" width="250"/>
+<img src="https://github.com/widetechid/WideKYC/blob/beta/assets/passportRecognize.png" alt="03" width="250"/>
+<img src="https://github.com/widetechid/WideKYC/blob/beta/assets/kkRecognize.png" alt="04" width="250"/>
 </p>
 
 ## Integration Architecture
 Here is the architecture of our SDK integration.
 
-![integrationChart](https://github.com/widetechid/WideKYC/blob/main/assets/integrationChart.jpeg)
+![integrationChart](https://github.com/widetechid/WideKYC/blob/beta/assets/integrationChart.jpeg)
 <p align=center>Figure 1. SDK integration architecture</p>
 
 SDK integration consists of two parts:
@@ -62,7 +62,7 @@ SDK integration consists of two parts:
 ## Interaction Flow
 The following diagram illustrates the whole interaction flow when a WideKYC service is started through the mobile application.
 
-![interactionDiagram](https://github.com/widetechid/WideKYC/blob/main/assets/interactionDiagram.jpeg)
+![interactionDiagram](https://github.com/widetechid/WideKYC/blob/beta/assets/interactionDiagram.jpeg)
 <p align=center>Figure 2. Sequence diagram</p>
 
 1. A user initiates a business process (for example, an ID Recognize process) through the merchant application.
