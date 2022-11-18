@@ -1,4 +1,4 @@
-package com.wide.ekycaggr.merchantserver;
+package com.wide.widekyc.merchantserver;
 
 import java.util.UUID;
 
