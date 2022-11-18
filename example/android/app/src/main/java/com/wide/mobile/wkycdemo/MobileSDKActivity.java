@@ -101,6 +101,8 @@ public class MobileSDKActivity extends AppCompatActivity {
                 WKYCConstants.PASSIVE_LIVENESS,
                 WKYCConstants.ID_RECOGNIZE,
                 WKYCConstants.ID_VALIDATION,
+                WKYCConstants.PASSPORT_RECOGNIZE,
+                WKYCConstants.KK_RECOGNIZE
         };
         ArrayAdapter adapter = new ArrayAdapter(context, R.layout.wkyc_product_list, items);
         productLists.setAdapter(adapter);
@@ -120,6 +122,14 @@ public class MobileSDKActivity extends AppCompatActivity {
                 }
                 else if(currentProduct.equalsIgnoreCase(WKYCConstants.ID_VALIDATION)){
                     serviceLevel.setText(WKYCConstants.SL_ID_VALIDATION_UI);
+                    serviceLevelLayout.setVisibility(View.VISIBLE);
+                }
+                else if(currentProduct.equalsIgnoreCase(WKYCConstants.PASSPORT_RECOGNIZE)){
+                    serviceLevel.setText(WKYCConstants.SL_PASSPORT_RECOGNIZE_ENT);
+                    serviceLevelLayout.setVisibility(View.VISIBLE);
+                }
+                else if(currentProduct.equalsIgnoreCase(WKYCConstants.KK_RECOGNIZE)){
+                    serviceLevel.setText(WKYCConstants.SL_KK_RECOGNIZE_ENT);
                     serviceLevelLayout.setVisibility(View.VISIBLE);
                 }
                 else{

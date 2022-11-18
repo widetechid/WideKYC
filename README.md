@@ -6,7 +6,7 @@
 
 <div align="center">
 
-<a href="">![Android SDK Version](https://img.shields.io/badge/Android-1.1.2-brightgreen)</a>
+<a href="">![Android SDK Version](https://img.shields.io/badge/Android-1.1.5-brightgreen)</a>
 <a href="">![iOS SDK Version](https://img.shields.io/badge/iOS-1.1.4-brightgreen)</a>
 <a href="">![GitHub language count](https://img.shields.io/github/languages/count/widetechid/widekyc)</a>
 <a href="">![GitHub top language](https://img.shields.io/github/languages/top/widetechid/widekyc)</a>
@@ -32,6 +32,9 @@ WideKYC SDK integration can be applied to the following products:
 * Liveness Detection
 * ID Recognize _(OCR)_
 * ID Validation _(by Dukcapil - Population and Civil Registration Agency)_
+* Passport Recognize _(OCR)_
+* KK Recognize _(OCR)_
+
 
 <p float="left">
 <img src="https://github.com/widetechid/WideKYC/blob/main/assets/passiveLiveness.png" alt="00" width="250"/>
