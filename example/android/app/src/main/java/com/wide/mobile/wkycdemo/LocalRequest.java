@@ -51,7 +51,7 @@ public class LocalRequest {
             }
         } catch (Exception e) {
             e.printStackTrace();
+            return "Error : " + e.getMessage();
         }
-        return null;
     }
 }

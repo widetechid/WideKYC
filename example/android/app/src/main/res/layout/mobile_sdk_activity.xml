@@ -62,7 +62,7 @@
                 android:textColor="@android:color/darker_gray"
                 android:fontFamily="@font/montserrat"
                 android:textSize="14dp"
-                android:text="http://34.101.86.149:8081/"
+                android:text="http://[host_ip]:[host_port]/"
                 android:padding="12dp"/>
         </LinearLayout>
 
@@ -88,7 +88,7 @@
                 android:textColor="@android:color/darker_gray"
                 android:fontFamily="@font/montserrat"
                 android:textSize="14dp"
-                android:text="initMerchant"
+                android:text="[api_name]"
                 android:padding="12dp"/>
         </LinearLayout>
 
@@ -146,7 +146,7 @@
                 android:textColor="@android:color/darker_gray"
                 android:fontFamily="@font/montserrat"
                 android:textSize="14dp"
-                android:text="initMerchant"
+                android:text=""
                 android:padding="12dp"/>
         </LinearLayout>
 

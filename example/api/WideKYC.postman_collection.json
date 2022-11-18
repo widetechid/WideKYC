@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "f8257290-311a-43fd-acb4-2282ef855ac2",
+		"name": "OPENAPI WIDE KYC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23487330"
+	},
+	"item": [
+		{
+			"name": "openAPI 00 (PL)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{client_token}}",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"transactionRefNo\" : \"\",\r\n    \"selfie_image\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{ip_address}}:{{port}}/api/passive-liveness",
+					"protocol": "http",
+					"host": [
+						"{{ip_address}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"passive-liveness"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "openAPI 01 (OCR)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{client_token}}",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"transactionRefNo\" : \"\",\r\n    \"id_image\" : \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{ip_address}}:{{port}}/api/id-recognize",
+					"protocol": "http",
+					"host": [
+						"{{ip_address}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"id-recognize"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "openAPI 02 (VP)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{client_token}}",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"transactionRefNo\" : \"\",\r\n    \"nik\" : \"\",\r\n    \"name\" : \"\",\r\n    \"birth_date\" : \"\",\r\n    \"birth_place\" : \"\",\r\n    \"address\" : \"\",\r\n    \"selfie_image\" : \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{ip_address}}:{{port}}/api/id-validation",
+					"protocol": "http",
+					"host": [
+						"{{ip_address}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"id-validation"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

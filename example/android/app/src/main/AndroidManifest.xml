@@ -31,16 +31,6 @@
             android:exported="true"
             android:theme="@style/Theme.KYCDemo.NoActionBar">
         </activity>
-        <activity
-            android:name="com.wide.mobile.wkycdemo.InitApiActivity"
-            android:exported="true"
-            android:theme="@style/Theme.KYCDemo.NoActionBar">
-        </activity>
-        <activity
-            android:name="com.wide.mobile.wkycdemo.WebViewActivity"
-            android:exported="true"
-            android:theme="@style/Theme.KYCDemo.NoActionBar">
-        </activity>
     </application>
 
 </manifest>
