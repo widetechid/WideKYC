@@ -1,15 +1,15 @@
 {
   "general": {
     "color": {
-      "title_bar_color": "#000000",
-      "title_text_color": "#ffffff",
-      "title_button_color": "#ffffff",
-      "liveness_instruction_color": "#000000",
+      "title_bar_color": "#ffffff",
+      "title_text_color": "#5582ad",
+      "title_button_color": "#5582ad",
+      "liveness_instruction_color": "#5582ad",
       "id_recognize_instruction_color": "#ffffff",
-      "id_validation_label_color": "#000000",
-      "id_validation_button_color": "#000000",
+      "id_validation_label_color": "#5582ad",
+      "id_validation_button_color": "#5582ad",
       "id_validation_button_text_color": "#ffffff",
-      "family_card_recognize_instruction_color": "#ffffff",
+      "kk_recognize_instruction_color": "#ffffff",
       "passport_recognize_instruction_color": "#ffffff",
       "error_popup_text_color": "#000000",
       "error_popup_button_text_color": "#000000"
@@ -41,12 +41,11 @@
       "id_validation_selfie": "Selfie",
       "id_validation_button_selfie": "Take",
       "id_validation_button_send_data": "Send Data",
-      "family_card_recognize_title": "Family Card Recognize",
-      "family_card_recognize_instruction": "Position your Family Card in the frame provided, \n and make sure the contents is clearly visible.",
-      "passport_recognize_title": "Passport Recognize",
-      "passport_recognize_instruction": "Position your Passport in the frame provided, \n and make sure the contents is clearly visible.",
-      "passport_recognize_error_msg": "It is not a proper Passport image,\nplease try again.",
-      "passport_recognize_error_copied_msg": "Copied Passport is not acceptable,\nplease try again."
+      "passport_recognize_title" : "Passport Recognize",
+      "passport_recognize_instruction" : "Position your Passport in the frame provided, \n and make sure the contents is clearly visible.",
+      "passport_recognize_error_msg" : "It is not a proper Passport image,\n please try again.",
+      "kk_recognize_title" : "Family Card Recognize",
+      "kk_recognize_instruction" : "Position your Family Card in the frame provided, \n and make sure the contents is clearly visible."
     },
     "id": {
       "liveness_title": "Deteksi Keaktifan",
@@ -68,13 +67,11 @@
       "id_validation_selfie": "Selfie",
       "id_validation_button_selfie": "Ambil",
       "id_validation_button_send_data": "Kirim Data",
-      "family_card_recognize_title": "Mengenali Kartu Keluarga",
-      "family_card_recognize_instruction": "Posisikan Kartu Keluarga Anda di bingkai yang tersedia, \n dan pastikan datanya terlihat jelas.",
-      "passport_recognize_title": "Mengenali Paspor",
-      "passport_recognize_instruction": "Posisikan Paspor Anda di bingkai yang tersedia, \n dan pastikan datanya terlihat jelas.",
-      "passport_recognize_error_msg": "Ini bukan gambar Paspor yang baik,\nsilakan coba lagi.",
-      "passport_recognize_error_copied_msg": "Salinan Paspor tidak dapat diterima,\nsilakan coba lagi."
-
+      "passport_recognize_title" : "Mengenali Paspor",
+      "passport_recognize_instruction" : "Posisikan Paspor Anda di bingkai yang tersedia, \n dan pastikan datanya terlihat jelas.",
+      "passport_recognize_error_msg" : "Ini bukan gambar Paspor yang baik,\nsilakan coba lagi.",
+      "kk_recognize_title" : "Mengenali Kartu Keluarga",
+      "kk_recognize_instruction" : "Posisikan Kartu Keluarga Anda di bingkai yang tersedia, \n dan pastikan datanya terlihat jelas."
     }
   }
 }

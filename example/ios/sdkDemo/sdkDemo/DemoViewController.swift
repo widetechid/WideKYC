@@ -32,10 +32,20 @@ class DemoViewController:UIViewController, UITextFieldDelegate, delegateProduct 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        hostTextField.text = UserDefaults.standard.string(forKey: "host_url")
+        hostTextField.placeholder = "host_url"
         hostTextField.delegate = self
-        apiTextField.delegate = self
-        serviceLevelTextField.delegate = self
+        hostTextField.tag = 1
+        hostTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         
+        apiTextField.text = UserDefaults.standard.string(forKey: "api_name")
+        apiTextField.placeholder = "api_name"
+        apiTextField.delegate = self
+        apiTextField.tag = 2
+        apiTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+        
+        serviceLevelTextField.delegate = self
+
         let borderColor : UIColor = UIColor(red: 0.85, green: 0.85, blue: 0.85, alpha: 1.0)
         
         productOption.text = WKYCConstants.PASSIVE_LIVENESS
@@ -73,6 +83,14 @@ class DemoViewController:UIViewController, UITextFieldDelegate, delegateProduct 
         scrollView.contentInset = contentInset
     }
     
+    @objc func textFieldDidChange(_ textField:UITextField){
+        if textField.tag == 1 {
+            UserDefaults.standard.set(textField.text, forKey: "host_url")
+        }else if textField.tag == 2 {
+            UserDefaults.standard.set(textField.text, forKey: "api_name")
+        }
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -84,190 +102,102 @@ class DemoViewController:UIViewController, UITextFieldDelegate, delegateProduct 
     
     @IBAction func startAction(_ sender: Any) {
         loadingShow()
-        if (productOption.text == "03" || productOption.text == "04") {
-            wkycConfig.product = productOption.text
-            if (productOption.text == "04") {
-                wkycConfig.serviceLevel = serviceLevelTextField.text
+        self.mockInitRequest(completion: { [self] result, error  in
+            if result?.count == 0 || result == nil {
+                DispatchQueue.main.async { [self] in
+                   showAlertMessage(vc: self, titleStr: "Warning", messageStr: "network exception, please try again")
+                }
             }
-
-            let request = WKYCRequest()
-            request.wkycConfig = wkycConfig
-            
-            let dictJson = NSMutableDictionary()
-            dictJson[WKYCConstants.LOCALE] = WKYCConstants.LANG_EN
-            dictJson[WKYCConstants.UI_CONFIG_PATH] = "config.json"
-            clientConfig.clientConfig = dictJson
-            request.clientConfig = clientConfig
-            request.wkycID = wkycid
-            
-            let requestData = NSMutableDictionary()
-
-            loadingDismis()
-            
-            do {
-                try WKYC.sharedInstance.start(request: request,
-                    completeCallback: { [self] value in
-                        if value.status == "Error" {
-                            DispatchQueue.main.async { [self] in
-                                showAlertMessage(vc: self, titleStr: "Warning", messageStr: String(format: "%@", value.message!))
-                            }
-                        }
-                        else{
-                            let urlStr = productOption.text == "03" ? "https://ai-dev.primecash.co.id/v1/extract-kk" : "https://ai-dev.primecash.co.id/v1/extract-passport"
-                            
-                            let Url = URL(string: urlStr)
-
-                            do {
-                                let params = value.data["params"] as? String ?? ""
-                                let data = Data(params.utf8)
-                                print("params: \(params)")
-
-                                if let jsonResult = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary {
-                                    let base64Image: String
-                                    if productOption.text == "03" {
-                                        base64Image = jsonResult.object(forKey: WKYCConstants.FAMILY_CARD_IMAGE) as! String
-                                    }else {
-                                        base64Image = jsonResult.object(forKey: WKYCConstants.PASSPORT_IMAGE) as! String
-                                    }
-                                    requestData.setValue(base64Image, forKey: "img")
-                                 }
-                            } catch let error as NSError {
-                                DispatchQueue.main.async {
-                                    let alert = UIAlertController(title: "Warning", message: String(format: "%@", error.localizedDescription), preferredStyle: UIAlertController.Style.alert)
-                                    let alertOk = UIAlertAction(title: "Ok", style: .default, handler: { action in
-                                    })
-                                    alert.addAction(alertOk)
-                                    UIApplication.shared.windows.last?.rootViewController?.present(alert, animated: true)
-                                }
-                            }
-                            
-                            LocalRequest().request(with: Url, bodyDic: (requestData as! [String : Any]), completionHandler: {[self] result, error  in
-                                if result?.count != 0 && result != nil {
-                                    DispatchQueue.main.async { [self] in
-                                        showAlertMessage(vc: self, titleStr: "Result", messageStr: String(format: "%@", result!))
-                                    }
-                                }
-                                else{
-                                    DispatchQueue.main.async { [self] in
-                                        showAlertMessage(vc: self, titleStr: "Warning", messageStr: error!.localizedDescription)
-                                    }
-                                }
-                            })
-                        }
-                    }
-                    , interruptCallback: { value in
-                        DispatchQueue.main.async { [self] in
-                            showAlertMessage(vc: self, titleStr: "Warning", messageStr: String(format: "%@", value.message!))
-                        }
-                    }
-                    , cancelCallback: { value in
-                        DispatchQueue.main.async { [self] in
-                            showAlertMessage(vc: self, titleStr: "Warning", messageStr: String(format: "%@", value.message!))
-                        }
-                    }
-                )
-              } catch let e {
-                  DispatchQueue.main.async { [self] in
-                      showAlertMessage(vc: self, titleStr: "Warning", messageStr: String(format: "%@", e.localizedDescription))
-                  }
-              }
-        }else {
-            self.mockInitRequest(completion: { [self] result, error  in
-                if result!.count == 0{
+            else{
+                let resultJson = result!.object(forKey: "statusCode") as? String ?? ""
+                if resultJson == "ERROR"{
                     DispatchQueue.main.async { [self] in
-                       showAlertMessage(vc: self, titleStr: "Warning", messageStr: "network exception, please try again")
+                        showAlertMessage(vc: self, titleStr: "Warning", messageStr: "Service Error")
                     }
                 }
                 else{
-                    let resultJson = result!.object(forKey: "statusCode") as? String ?? ""
-                    if resultJson == "ERROR"{
-                        DispatchQueue.main.async { [self] in
-                            showAlertMessage(vc: self, titleStr: "Warning", messageStr: "Service Error")
-                        }
-                    }
-                    else{
-                        /**
-                        * You need to provide WKYCID for product 02 with service level 62021 to work
-                        */
+                    /**
+                    * You need to provide WKYCID for product 02 with service level 62021 to work
+                    */
 
-                        wkycid.nik = "3203012503770011"
-                        wkycid.name = "Guohui Chen"
-                        wkycid.birthdate = "25-03-1977"
-                        wkycid.birthplace = "Fujian"
-                        wkycid.address = "Jl Selamet, Perumahan Rancabali"
+                    wkycid.nik = "3203012503770011"
+                    wkycid.name = "Guohui Chen"
+                    wkycid.birthdate = "25-03-1977"
+                    wkycid.birthplace = "Fujian"
+                    wkycid.address = "Jl Selamet, Perumahan Rancabali"
 
 
-                        let dict = result!.object(forKey: "content") as? NSDictionary ?? [:]
-                        wkycConfig.trxId = dict.object(forKey: "trxId") as? String
-                        wkycConfig.product = dict.object(forKey: "product") as? String
-                        wkycConfig.gatewayUrl = dict.object(forKey: "gatewayUrl") as? String
-                        wkycConfig.serviceLevel = dict.object(forKey: "serviceLevel") as? String
+                    let dict = result!.object(forKey: "content") as? NSDictionary ?? [:]
+                    wkycConfig.trxId = dict.object(forKey: "trxId") as? String
+                    wkycConfig.product = dict.object(forKey: "product") as? String
+                    wkycConfig.gatewayUrl = dict.object(forKey: "gatewayUrl") as? String
+                    wkycConfig.serviceLevel = dict.object(forKey: "serviceLevel") as? String
 
 
-                        let request = WKYCRequest()
-                        request.wkycConfig = wkycConfig
-                        let dictJson = NSMutableDictionary()
-                        dictJson[WKYCConstants.LOCALE] = WKYCConstants.LANG_EN
-                        dictJson[WKYCConstants.UI_CONFIG_PATH] = "config.json"
-                        clientConfig.clientConfig = dictJson
-                        request.clientConfig = clientConfig
-                        request.wkycID = wkycid
+                    let request = WKYCRequest()
+                    request.wkycConfig = wkycConfig
+                    let dictJson = NSMutableDictionary()
+                    dictJson[WKYCConstants.LOCALE] = WKYCConstants.LANG_EN
+                    dictJson[WKYCConstants.UI_CONFIG_PATH] = "config.json"
+                    clientConfig.clientConfig = dictJson
+                    request.clientConfig = clientConfig
+                    request.wkycID = wkycid
 
 
-                         do {
-                             try  WKYC.sharedInstance.start(request: request,
-                                completeCallback: { [self]value in
-                                    if value.status == "Error"{
-                                        DispatchQueue.main.async { [self] in
-                                            showAlertMessage(vc: self, titleStr: "Warning", messageStr: String(format: "%@", value.message!))
-                                        }
-                                    }
-                                    else{
-                                        /**
-                                         * this is how to get processed image from product 00 & 01
-                                         * image will be send only onCompleted callback
-                                         * String imagePath = response.data.getString("WKYCConstants.PROCESSED_IMAGE_PATH");
-                                         * String imageBase64 = getBase64FromPath(imagePath);
-                                         */
-                                        let Url = URL(string: String(format: "%@", wkycConfig.gatewayUrl!))
-
-                                        LocalRequest().request(with: Url, bodyDic: value.data, completionHandler: {[self] result, error  in
-                                            if result?.count != 0 {
-                                                let content = result!.object(forKey: "content") as? NSDictionary ?? [:]
-                                                let trxId = content.object(forKey: WKYCConstants.TRX_ID) as? String ?? ""
-
-                                                DispatchQueue.main.async { [self] in
-                                                    checkResultWithId(transactionId: trxId)
-                                                }
-                                            }
-                                            else{
-                                                DispatchQueue.main.async { [self] in
-                                                    showAlertMessage(vc: self, titleStr: "Warning", messageStr: error!.localizedDescription)
-                                                }
-                                            }
-                                        })
-                                    }
-                                }
-                                , interruptCallback: { value in
-                                        DispatchQueue.main.async { [self] in
-                                            showAlertMessage(vc: self, titleStr: "Warning", messageStr: String(format: "%@", value.message!))
-                                        }
-                                }
-                                , cancelCallback: { value in
+                     do {
+                         try  WKYC.sharedInstance.start(request: request,
+                            completeCallback: { [self]value in
+                                if value.status == "Error"{
                                     DispatchQueue.main.async { [self] in
                                         showAlertMessage(vc: self, titleStr: "Warning", messageStr: String(format: "%@", value.message!))
                                     }
                                 }
-                            )
-                        } catch let e {
-                            DispatchQueue.main.async { [self] in
-                                showAlertMessage(vc: self, titleStr: "Warning", messageStr: String(format: "%@", e.localizedDescription))
+                                else{
+                                    /**
+                                     * this is how to get processed image from product 00 & 01
+                                     * image will be send only onCompleted callback
+                                     * String imagePath = response.data.getString("WKYCConstants.PROCESSED_IMAGE_PATH");
+                                     * String imageBase64 = getBase64FromPath(imagePath);
+                                     */
+                                    
+                                    let Url = URL(string: String(format: "%@", wkycConfig.gatewayUrl!))
+
+                                    LocalRequest().request(with: Url, bodyDic: value.data, completionHandler: {[self] result, error  in
+                                        if result?.count != 0 {
+                                            let content = result!.object(forKey: "content") as? NSDictionary ?? [:]
+                                            let trxId = content.object(forKey: WKYCConstants.TRX_ID) as? String ?? ""
+
+                                            DispatchQueue.main.async { [self] in
+                                                checkResultWithId(transactionId: trxId)
+                                            }
+                                        }
+                                        else{
+                                            DispatchQueue.main.async { [self] in
+                                                showAlertMessage(vc: self, titleStr: "Warning", messageStr: error!.localizedDescription)
+                                            }
+                                        }
+                                    })
+                                }
                             }
+                            , interruptCallback: { value in
+                                    DispatchQueue.main.async { [self] in
+                                        showAlertMessage(vc: self, titleStr: "Warning", messageStr: String(format: "%@", value.message!))
+                                    }
+                            }
+                            , cancelCallback: { value in
+                                DispatchQueue.main.async { [self] in
+                                    showAlertMessage(vc: self, titleStr: "Warning", messageStr: String(format: "%@", value.message!))
+                                }
+                            }
+                        )
+                    } catch let e {
+                        DispatchQueue.main.async { [self] in
+                            showAlertMessage(vc: self, titleStr: "Warning", messageStr: String(format: "%@", e.localizedDescription))
                         }
                     }
                 }
-            })
-        }
+            }
+        })
     }
     
     func updateLayout(productChoice : String){
@@ -289,17 +219,17 @@ class DemoViewController:UIViewController, UITextFieldDelegate, delegateProduct 
             serviceLevelTextField.isHidden = false
             serviceLevelTextField.text = WKYCConstants.SL_ID_VALIDATION_UI
         }
-        else if productOption.text == WKYCConstants.FAMILY_CARD_RECOGNIZE{
-            startButtonTopConstraint.constant = 127.5
-            serviceLevelLabel.isHidden = false
-            serviceLevelTextField.isHidden = false
-            serviceLevelTextField.text = WKYCConstants.SL_FAMILY_CARD_RECOGNIZE_ENT
-        }
         else if productOption.text == WKYCConstants.PASSPORT_RECOGNIZE{
             startButtonTopConstraint.constant = 127.5
             serviceLevelLabel.isHidden = false
             serviceLevelTextField.isHidden = false
             serviceLevelTextField.text = WKYCConstants.SL_PASSPORT_RECOGNIZE_ENT
+        }
+        else if productOption.text == WKYCConstants.KK_RECOGNIZE{
+            startButtonTopConstraint.constant = 127.5
+            serviceLevelLabel.isHidden = false
+            serviceLevelTextField.isHidden = false
+            serviceLevelTextField.text = WKYCConstants.SL_KK_RECOGNIZE_ENT
         }
         else{
             startButtonTopConstraint.constant = 30
@@ -310,14 +240,14 @@ class DemoViewController:UIViewController, UITextFieldDelegate, delegateProduct 
     }
     
     func checkResultWithId(transactionId : String){
-        let Url = URL(string: String(format: "%@%@", hostTextField.text!,  "/checkResult"))
+        let Url = URL(string: String(format: "%@%@", hostTextField.text!,  "checkResult"))
         let _paramDicCheckResult = [ WKYCConstants.TRX_ID : transactionId, ] as [String:Any]
         
         print("_paramDicCheckResult:",_paramDicCheckResult)
         
         LocalRequest().request(with: Url, bodyDic: _paramDicCheckResult, completionHandler: { [self] result, error  in
             loadingDismis()
-            if result?.count != 0{
+            if result?.count != 0 && result != nil {
                 if(wkycConfig.product == "01"){
                     DispatchQueue.main.async { [self] in
                         showAlertMessage(vc: self, titleStr: "Result", messageStr: String(format: "%@", result!))
@@ -348,14 +278,15 @@ class DemoViewController:UIViewController, UITextFieldDelegate, delegateProduct 
                           WKYCConstants.SERVICE_LEVEL : serviceLevelTextField.text! ] as [String: AnyObject]
         
         print("params",_paramDic)
-        
         LocalRequest().request(with: Url, bodyDic: _paramDic, completionHandler: {[self] result, error  in
-            loadingDismis()
-            if result?.count != 0{
-                completion(result!, nil)
-            }
-            else{
-                completion(nil, error!)
+            DispatchQueue.main.async {
+                self.loadingDismis()
+                if result?.count != 0 && result != nil {
+                    completion(result, nil)
+                }
+                else{
+                    completion(nil, error!)
+                }
             }
         })
     }
@@ -381,7 +312,7 @@ class DemoViewController:UIViewController, UITextFieldDelegate, delegateProduct 
     
     
     func showAlertMessage(vc: UIViewController, titleStr:String, messageStr:String) -> Void {
-        let alert = UIAlertController(title: titleStr, message: messageStr, preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: titleStr , message: messageStr, preferredStyle: UIAlertController.Style.alert)
         let alertOk = UIAlertAction(title: "Ok", style: .default, handler: { action in
 
         })

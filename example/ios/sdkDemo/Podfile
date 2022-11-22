@@ -9,5 +9,5 @@ target 'sdkDemo' do
   # Pods for sdkDemo
   pod 'widekyc'
   pod 'SVProgressHUD'
-
+  
 end

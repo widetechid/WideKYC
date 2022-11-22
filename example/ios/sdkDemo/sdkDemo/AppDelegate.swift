@@ -16,13 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
             
-        WKYC.sharedInstance.initRootVC(root: (self.window?.rootViewController)!)
+        WKYC.sharedInstance.configure(application)
         
         return true
     }
     
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
-        return WKYC.sharedInstance.lockOrientation()
+        return WKYC.sharedInstance.application(application, supportedInterfaceOrientationsFor: window)
     }
 }
-
