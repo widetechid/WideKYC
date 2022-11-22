@@ -9,7 +9,9 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
@@ -65,13 +67,42 @@ public class MobileSDKActivity extends AppCompatActivity {
         serviceLevel = findViewById(R.id.init_service_level);
         serviceLevelLayout = findViewById(R.id.init_service_level_layout);
         loader = findViewById(R.id.mainLoader);
-        productLists = findViewById(R.id.productLists);
 
+        host.setText(Helper.getHostInput(context));
+        api.setText(Helper.getApiInput(context));
+
+        host.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                Helper.setHostInput(context,charSequence.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) { }
+        });
+        api.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                Helper.setApiInput(context,charSequence.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) { }
+        });
+
+        productLists = findViewById(R.id.productLists);
         String[] items = new String[]{
                 WKYCConstants.PASSIVE_LIVENESS,
                 WKYCConstants.ID_RECOGNIZE,
                 WKYCConstants.ID_VALIDATION,
-                WKYCConstants.REAL_ID,
+                WKYCConstants.PASSPORT_RECOGNIZE,
+                WKYCConstants.KK_RECOGNIZE
         };
         ArrayAdapter adapter = new ArrayAdapter(context, R.layout.wkyc_product_list, items);
         productLists.setAdapter(adapter);
@@ -91,6 +122,14 @@ public class MobileSDKActivity extends AppCompatActivity {
                 }
                 else if(currentProduct.equalsIgnoreCase(WKYCConstants.ID_VALIDATION)){
                     serviceLevel.setText(WKYCConstants.SL_ID_VALIDATION_UI);
+                    serviceLevelLayout.setVisibility(View.VISIBLE);
+                }
+                else if(currentProduct.equalsIgnoreCase(WKYCConstants.PASSPORT_RECOGNIZE)){
+                    serviceLevel.setText(WKYCConstants.SL_PASSPORT_RECOGNIZE_ENT);
+                    serviceLevelLayout.setVisibility(View.VISIBLE);
+                }
+                else if(currentProduct.equalsIgnoreCase(WKYCConstants.KK_RECOGNIZE)){
+                    serviceLevel.setText(WKYCConstants.SL_KK_RECOGNIZE_ENT);
                     serviceLevelLayout.setVisibility(View.VISIBLE);
                 }
                 else{
@@ -115,11 +154,16 @@ public class MobileSDKActivity extends AppCompatActivity {
         runOnIoThread(new Runnable() {
             @Override
             public void run() {
-                String result = initRequest();
+                String result = initMerchant();
                 if (result.length() == 3) {
                     showToast("network exception, please try again. error code : "+result);
                     return;
                 }
+                else if(result.contains("Error")){
+                    showToast(result);
+                    return;
+                }
+
                 try{
                     JSONObject resultJson = new JSONObject(result);
                     if(resultJson.getString("statusCode").equalsIgnoreCase("ERROR")){
@@ -140,7 +184,7 @@ public class MobileSDKActivity extends AppCompatActivity {
                         final WKYCRequest request = new WKYCRequest();
                         request.wkycConfig = new Gson().fromJson(resultJson.getString("content"), WKYCConfig.class);
                         request.clientConfig = new HashMap<>();
-                        request.clientConfig.put(WKYCConstants.LOCALE, WKYCConstants.LANG_ID);
+                        request.clientConfig.put(WKYCConstants.LOCALE, WKYCConstants.LANG_EN);
                         request.clientConfig.put(WKYCConstants.UI_CONFIG_PATH, "config.json");
                         request.wkycid = wkycid;
                         mHandler.postAtFrontOfQueue(new Runnable() {
@@ -218,10 +262,10 @@ public class MobileSDKActivity extends AppCompatActivity {
         });
     }
 
-    private String initRequest() {
+    private String initMerchant() {
         try{
             LocalRequest local = new LocalRequest();
-            String requestUrl = host.getText().toString() + api.getText().toString();
+            String requestUrl = host.getText().toString() +api.getText().toString();
             JSONObject jsonObject = new JSONObject();
             jsonObject.put(WKYCConstants.META_INFO, WKYC.getMetaInfo(context));
             jsonObject.put(WKYCConstants.PRODUCT, productLists.getSelectedItem().toString());
@@ -232,7 +276,7 @@ public class MobileSDKActivity extends AppCompatActivity {
         }
         catch (Exception e){
             e.printStackTrace();
-            return null;
+            return "Error : " + e.getMessage();
         }
     }
 

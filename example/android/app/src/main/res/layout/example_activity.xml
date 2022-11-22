@@ -39,20 +39,5 @@
             android:onClick="startMobileSdk"
             android:text="Start Mobile SDK"/>
 
-        <Button
-            android:id="@+id/startApiInterface"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="20dp"
-            android:textAllCaps="false"
-            android:textColor="@android:color/white"
-            android:fontFamily="@font/montserrat"
-            android:background="@drawable/wkyc_layout_input_bg"
-            android:backgroundTint="@color/wideBlue"
-            android:textSize="14dp"
-            android:textStyle="bold"
-            android:onClick="startApiInterface"
-            android:text="Start API Interface"/>
-
     </LinearLayout>
 </FrameLayout>

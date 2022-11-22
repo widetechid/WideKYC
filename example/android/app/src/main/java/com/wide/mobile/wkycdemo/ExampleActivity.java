@@ -27,9 +27,4 @@ public class ExampleActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MobileSDKActivity.class);
         startActivity(intent);
     }
-
-    public void startApiInterface(View view){
-        Intent intent = new Intent(this, InitApiActivity.class);
-        startActivity(intent);
-    }
 }
