@@ -32,13 +32,13 @@ class DemoViewController:UIViewController, UITextFieldDelegate, delegateProduct 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        hostTextField.text = UserDefaults.standard.string(forKey: "host_url")
+        hostTextField.text = UserDefaults.standard.string(forKey: "host_url") ?? "http://[host_url]:[host_port]/"
         hostTextField.placeholder = "host_url"
         hostTextField.delegate = self
         hostTextField.tag = 1
         hostTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         
-        apiTextField.text = UserDefaults.standard.string(forKey: "api_name")
+        apiTextField.text = UserDefaults.standard.string(forKey: "api_name") ?? "[api_name]"
         apiTextField.placeholder = "api_name"
         apiTextField.delegate = self
         apiTextField.tag = 2

@@ -71,7 +71,7 @@ PODS:
     - TensorFlowLiteSwift/Core (= 2.7.0)
   - TensorFlowLiteSwift/Core (2.7.0):
     - TensorFlowLiteC (= 2.7.0)
-  - widekyc (1.1.4):
+  - widekyc (1.1.5):
     - GoogleMLKit/FaceDetection (= 2.2.0)
     - GoogleMLKit/TextRecognition (= 2.2.0)
     - SwiftyJSON
@@ -122,7 +122,7 @@ SPEC CHECKSUMS:
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   TensorFlowLiteC: 50d75ed3640c15dcfbaf88ca4326297b445e00a1
   TensorFlowLiteSwift: fe99748dc3d58ae08bd2ff38658e3ade7038670f
-  widekyc: 55241e0b5e2f9581d2573b05f1d197465ecfc891
+  widekyc: bc99c6f870b84a863b495c73151867c81d4c0924
 
 PODFILE CHECKSUM: 9496125b1e05a9d21cab7a45eb8da4bf51ca775b
 
