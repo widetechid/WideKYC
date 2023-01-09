@@ -1,4 +1,4 @@
-package com.wide.widekyc.merchantserver;
+package com.wide.ekycaggr.merchantserver;
 
 import java.util.UUID;
 
@@ -9,13 +9,14 @@ public class RequestParams {
     private String serviceLevel;
     private String metaInfo;
     private String trxId;
-    private String transactionRefNo;
+    private String custRefNo = UUID.randomUUID().toString();
 
-    public RequestParams(String product, String serviceLevel, String metaInfo, String trxId) {
+    public RequestParams(String product, String serviceLevel, String metaInfo, String trxId, String custRefNo) {
         this.product = product;
         this.serviceLevel = serviceLevel;
         this.metaInfo = metaInfo;
         this.trxId = trxId;
+        this.custRefNo = custRefNo;
     }
 
     public String getProduct() {
@@ -50,12 +51,12 @@ public class RequestParams {
         this.trxId = trxId;
     }
 
-    public String getTransactionRefNo() {
-        return transactionRefNo;
+    public String getCustRefNo() {
+        return custRefNo;
     }
 
-    public void setTransactionRefNo(String transactionRefNo) {
-        this.transactionRefNo = transactionRefNo;
+    public void setCustRefNo(String custRefNo) {
+        this.custRefNo = custRefNo;
     }
 
     @Override
@@ -65,7 +66,7 @@ public class RequestParams {
                 ", serviceLevel='" + serviceLevel + '\'' +
                 ", metaInfo='" + metaInfo + '\'' +
                 ", trxId='" + trxId + '\'' +
-                ", transactionRefNo='" + transactionRefNo + '\'' +
+                ", custRefNo='" + custRefNo + '\'' +
                 '}';
     }
 }
