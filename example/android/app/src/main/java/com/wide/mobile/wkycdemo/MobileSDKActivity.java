@@ -185,6 +185,7 @@ public class MobileSDKActivity extends AppCompatActivity {
                         request.wkycConfig = new Gson().fromJson(resultJson.getString("content"), WKYCConfig.class);
                         request.clientConfig = new HashMap<>();
                         request.clientConfig.put(WKYCConstants.LOCALE, WKYCConstants.LANG_EN);
+                        request.clientConfig.put(WKYCConstants.FLAT_SURFACE_ONLY, true);
                         request.clientConfig.put(WKYCConstants.UI_CONFIG_PATH, "config.json");
                         request.wkycid = wkycid;
                         mHandler.postAtFrontOfQueue(new Runnable() {
