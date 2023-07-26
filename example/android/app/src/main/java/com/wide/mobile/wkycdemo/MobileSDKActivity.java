@@ -113,7 +113,7 @@ public class MobileSDKActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String currentProduct = productLists.getSelectedItem().toString();
                 if(currentProduct.equalsIgnoreCase(WKYCConstants.PASSIVE_LIVENESS)){
-                    serviceLevel.setText(WKYCConstants.SL_PASSIVE_LIVENESS_MED);
+                    serviceLevel.setText(WKYCConstants.SL_PASSIVE_LIVENESS_ENT);
                     serviceLevelLayout.setVisibility(View.VISIBLE);
                 }
                 else if(currentProduct.equalsIgnoreCase(WKYCConstants.ID_RECOGNIZE)){
