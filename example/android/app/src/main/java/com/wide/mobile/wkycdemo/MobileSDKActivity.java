@@ -101,6 +101,8 @@ public class MobileSDKActivity extends AppCompatActivity {
                 WKYCConstants.PASSIVE_LIVENESS,
                 WKYCConstants.ID_RECOGNIZE,
                 WKYCConstants.ID_VALIDATION,
+                WKYCConstants.PASSPORT_RECOGNIZE,
+                WKYCConstants.KK_RECOGNIZE
         };
         ArrayAdapter adapter = new ArrayAdapter(context, R.layout.wkyc_product_list, items);
         productLists.setAdapter(adapter);
@@ -111,7 +113,7 @@ public class MobileSDKActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String currentProduct = productLists.getSelectedItem().toString();
                 if(currentProduct.equalsIgnoreCase(WKYCConstants.PASSIVE_LIVENESS)){
-                    serviceLevel.setText(WKYCConstants.SL_PASSIVE_LIVENESS_MED);
+                    serviceLevel.setText(WKYCConstants.SL_PASSIVE_LIVENESS_ENT);
                     serviceLevelLayout.setVisibility(View.VISIBLE);
                 }
                 else if(currentProduct.equalsIgnoreCase(WKYCConstants.ID_RECOGNIZE)){
@@ -120,6 +122,14 @@ public class MobileSDKActivity extends AppCompatActivity {
                 }
                 else if(currentProduct.equalsIgnoreCase(WKYCConstants.ID_VALIDATION)){
                     serviceLevel.setText(WKYCConstants.SL_ID_VALIDATION_UI);
+                    serviceLevelLayout.setVisibility(View.VISIBLE);
+                }
+                else if(currentProduct.equalsIgnoreCase(WKYCConstants.PASSPORT_RECOGNIZE)){
+                    serviceLevel.setText(WKYCConstants.SL_PASSPORT_RECOGNIZE_ENT);
+                    serviceLevelLayout.setVisibility(View.VISIBLE);
+                }
+                else if(currentProduct.equalsIgnoreCase(WKYCConstants.KK_RECOGNIZE)){
+                    serviceLevel.setText(WKYCConstants.SL_KK_RECOGNIZE_ENT);
                     serviceLevelLayout.setVisibility(View.VISIBLE);
                 }
                 else{
@@ -175,6 +185,7 @@ public class MobileSDKActivity extends AppCompatActivity {
                         request.wkycConfig = new Gson().fromJson(resultJson.getString("content"), WKYCConfig.class);
                         request.clientConfig = new HashMap<>();
                         request.clientConfig.put(WKYCConstants.LOCALE, WKYCConstants.LANG_EN);
+                        request.clientConfig.put(WKYCConstants.FLAT_SURFACE_ONLY, true);
                         request.clientConfig.put(WKYCConstants.UI_CONFIG_PATH, "config.json");
                         request.wkycid = wkycid;
                         mHandler.postAtFrontOfQueue(new Runnable() {

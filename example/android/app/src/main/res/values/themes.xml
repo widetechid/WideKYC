@@ -24,4 +24,5 @@
     <style name="Theme.KYCDemo.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.KYCDemo.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 </resources>

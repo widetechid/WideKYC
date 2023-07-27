@@ -22,21 +22,20 @@ class LocalRequest : NSObject{
         request?.setValue("application/json", forHTTPHeaderField: "Content-type")
 
         let session = URLSession.shared
-        
-        
         let dataTask = session.dataTask(with: request! as URLRequest) { datas, response, error in
             let httpResponse = response as? HTTPURLResponse
             if httpResponse?.statusCode == 200 {
                 do {
-                    if let jsonResult = try JSONSerialization.jsonObject(with: datas!, options: []) as? NSDictionary {
+                    if let jsonResult = try JSONSerialization.jsonObject(with: datas!, options: []) as? NSDictionary
+                    {
                         completionHandler(jsonResult, nil)
-                    }
-                } catch let error as NSError {
-                    completionHandler(nil,error)
+                     }
+                   } catch let error as NSError {
+                       completionHandler(nil, error)
                 }
             }
             else{
-                let error = NSError(domain: "Warning", code: 400, userInfo: [NSLocalizedDescriptionKey: "Bad Request"])
+                let error = NSError(domain: "Warning", code: 400, userInfo: [NSLocalizedDescriptionKey: "Network Error"])
                 completionHandler(nil,error)
             }
         }
