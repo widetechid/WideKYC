@@ -33,7 +33,7 @@ WideKYC SDK integration can be applied to the following products:
 * ID Recognize _(OCR)_
 * ID Validation _(by Dukcapil - Population and Civil Registration Agency)_
 * Passport Recognize _(OCR)_
-* KK Recognize _(OCR)_
+* Family Card Recognize _(OCR)_
 
 
 <p float="left">
