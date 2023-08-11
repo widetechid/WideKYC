@@ -113,7 +113,7 @@ public class MobileSDKActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String currentProduct = productLists.getSelectedItem().toString();
                 if(currentProduct.equalsIgnoreCase(WKYCConstants.PASSIVE_LIVENESS)){
-                    serviceLevel.setText(WKYCConstants.SL_PASSIVE_LIVENESS_MED);
+                    serviceLevel.setText(WKYCConstants.SL_PASSIVE_LIVENESS_ENT);
                     serviceLevelLayout.setVisibility(View.VISIBLE);
                 }
                 else if(currentProduct.equalsIgnoreCase(WKYCConstants.ID_RECOGNIZE)){
@@ -185,6 +185,7 @@ public class MobileSDKActivity extends AppCompatActivity {
                         request.wkycConfig = new Gson().fromJson(resultJson.getString("content"), WKYCConfig.class);
                         request.clientConfig = new HashMap<>();
                         request.clientConfig.put(WKYCConstants.LOCALE, WKYCConstants.LANG_EN);
+                        request.clientConfig.put(WKYCConstants.FLAT_SURFACE_ONLY, true);
                         request.clientConfig.put(WKYCConstants.UI_CONFIG_PATH, "config.json");
                         request.wkycid = wkycid;
                         mHandler.postAtFrontOfQueue(new Runnable() {
