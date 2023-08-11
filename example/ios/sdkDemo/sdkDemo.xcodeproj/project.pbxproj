@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B6CD0B012908F1B70068BC5D /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CD0B002908F1B70068BC5D /* DemoViewController.swift */; };
+		B6F4E0E92A86194B00C2A9A0 /* WideLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F4E0E82A86194B00C2A9A0 /* WideLoading.swift */; };
+		B6F4E0EC2A861EF900C2A9A0 /* StyleUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F4E0EB2A861EF900C2A9A0 /* StyleUtil.swift */; };
+		CBED7FBB18E3A18033683B8C /* Pods_sdkDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B79A5AC986E65DD992A7E151 /* Pods_sdkDemo.framework */; };
 		CE62490027F17AA300688717 /* img_back.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6248FC27F17AA300688717 /* img_back.png */; };
 		CE62490127F17AA300688717 /* img_flash_active.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6248FD27F17AA300688717 /* img_flash_active.png */; };
 		CE62490227F17AA300688717 /* config.json in Resources */ = {isa = PBXBuildFile; fileRef = CE6248FE27F17AA300688717 /* config.json */; };
@@ -18,14 +21,27 @@
 		CE983D8627EC0B3200F895C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE983D8427EC0B3200F895C4 /* LaunchScreen.storyboard */; };
 		CE983D9327EC133D00F895C4 /* ProductOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE983D9227EC133D00F895C4 /* ProductOptionViewController.swift */; };
 		CE983D9527EC157400F895C4 /* LocalRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE983D9427EC157400F895C4 /* LocalRequest.swift */; };
-		DDA6EE3E73A230A218546C8F /* Pods_sdkDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC96C1300A0E462A5343B47A /* Pods_sdkDemo.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B631E7192A5E6DA400E051E7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		63EE5EDF074839BEB3893363 /* Pods-sdkDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sdkDemo.debug.xcconfig"; path = "Target Support Files/Pods-sdkDemo/Pods-sdkDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		661BE073A592897F7C21CA51 /* Pods-sdkDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sdkDemo.release.xcconfig"; path = "Target Support Files/Pods-sdkDemo/Pods-sdkDemo.release.xcconfig"; sourceTree = "<group>"; };
 		B6CD0B002908F1B70068BC5D /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
-		BC96C1300A0E462A5343B47A /* Pods_sdkDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sdkDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6F4E0E82A86194B00C2A9A0 /* WideLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WideLoading.swift; sourceTree = "<group>"; };
+		B6F4E0EB2A861EF900C2A9A0 /* StyleUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleUtil.swift; sourceTree = "<group>"; };
+		B79A5AC986E65DD992A7E151 /* Pods_sdkDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sdkDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C54EA8EE3186E0DC7482D62F /* Pods-sdkDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sdkDemo.release.xcconfig"; path = "Target Support Files/Pods-sdkDemo/Pods-sdkDemo.release.xcconfig"; sourceTree = "<group>"; };
 		CE6248FC27F17AA300688717 /* img_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_back.png; sourceTree = "<group>"; };
 		CE6248FD27F17AA300688717 /* img_flash_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_flash_active.png; sourceTree = "<group>"; };
 		CE6248FE27F17AA300688717 /* config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = config.json; sourceTree = "<group>"; };
@@ -38,6 +54,7 @@
 		CE983D8727EC0B3200F895C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE983D9227EC133D00F895C4 /* ProductOptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductOptionViewController.swift; sourceTree = "<group>"; };
 		CE983D9427EC157400F895C4 /* LocalRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRequest.swift; sourceTree = "<group>"; };
+		FED793EE73395BC76FB8AFE8 /* Pods-sdkDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sdkDemo.debug.xcconfig"; path = "Target Support Files/Pods-sdkDemo/Pods-sdkDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +62,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDA6EE3E73A230A218546C8F /* Pods_sdkDemo.framework in Frameworks */,
+				CBED7FBB18E3A18033683B8C /* Pods_sdkDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		329E7E9E75F0566053126866 /* Frameworks */ = {
+		0DE57CC5D297D79A538F4446 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BC96C1300A0E462A5343B47A /* Pods_sdkDemo.framework */,
+				B79A5AC986E65DD992A7E151 /* Pods_sdkDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -63,10 +80,26 @@
 		3FA7868696755F3B046CE9F7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				63EE5EDF074839BEB3893363 /* Pods-sdkDemo.debug.xcconfig */,
-				661BE073A592897F7C21CA51 /* Pods-sdkDemo.release.xcconfig */,
+				FED793EE73395BC76FB8AFE8 /* Pods-sdkDemo.debug.xcconfig */,
+				C54EA8EE3186E0DC7482D62F /* Pods-sdkDemo.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		B6F4E0E72A86191E00C2A9A0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B6F4E0E82A86194B00C2A9A0 /* WideLoading.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B6F4E0EA2A861EEA00C2A9A0 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				B6F4E0EB2A861EF900C2A9A0 /* StyleUtil.swift */,
+			);
+			name = Utility;
 			sourceTree = "<group>";
 		};
 		CE62491527F1A57500688717 /* Assets */ = {
@@ -86,7 +119,7 @@
 				CE983D7827EC0B3100F895C4 /* sdkDemo */,
 				CE983D7727EC0B3100F895C4 /* Products */,
 				3FA7868696755F3B046CE9F7 /* Pods */,
-				329E7E9E75F0566053126866 /* Frameworks */,
+				0DE57CC5D297D79A538F4446 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +134,8 @@
 		CE983D7827EC0B3100F895C4 /* sdkDemo */ = {
 			isa = PBXGroup;
 			children = (
+				B6F4E0EA2A861EEA00C2A9A0 /* Utility */,
+				B6F4E0E72A86191E00C2A9A0 /* Components */,
 				CE62491527F1A57500688717 /* Assets */,
 				CE983D7927EC0B3100F895C4 /* AppDelegate.swift */,
 				B6CD0B002908F1B70068BC5D /* DemoViewController.swift */,
@@ -121,12 +156,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE983D8A27EC0B3200F895C4 /* Build configuration list for PBXNativeTarget "sdkDemo" */;
 			buildPhases = (
-				EFED0D726C88664C60B093C9 /* [CP] Check Pods Manifest.lock */,
+				9C6A43105DCED197962882BE /* [CP] Check Pods Manifest.lock */,
 				CE983D7227EC0B3100F895C4 /* Sources */,
 				CE983D7327EC0B3100F895C4 /* Frameworks */,
 				CE983D7427EC0B3100F895C4 /* Resources */,
-				E0E46B4458984A1510B8C3FD /* [CP] Embed Pods Frameworks */,
-				F6D400A19CE699E85140C5F3 /* [CP] Copy Pods Resources */,
+				B631E7192A5E6DA400E051E7 /* Embed Frameworks */,
+				74AD32976614A352513530AA /* [CP] Embed Pods Frameworks */,
+				0800F230FDB832B80BC62C89 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -188,7 +224,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		E0E46B4458984A1510B8C3FD /* [CP] Embed Pods Frameworks */ = {
+		0800F230FDB832B80BC62C89 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sdkDemo/Pods-sdkDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sdkDemo/Pods-sdkDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-sdkDemo/Pods-sdkDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		74AD32976614A352513530AA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -205,7 +258,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-sdkDemo/Pods-sdkDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EFED0D726C88664C60B093C9 /* [CP] Check Pods Manifest.lock */ = {
+		9C6A43105DCED197962882BE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -227,23 +280,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F6D400A19CE699E85140C5F3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-sdkDemo/Pods-sdkDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-sdkDemo/Pods-sdkDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-sdkDemo/Pods-sdkDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -254,6 +290,8 @@
 				CE983D7A27EC0B3100F895C4 /* AppDelegate.swift in Sources */,
 				CE983D9327EC133D00F895C4 /* ProductOptionViewController.swift in Sources */,
 				CE983D9527EC157400F895C4 /* LocalRequest.swift in Sources */,
+				B6F4E0EC2A861EF900C2A9A0 /* StyleUtil.swift in Sources */,
+				B6F4E0E92A86194B00C2A9A0 /* WideLoading.swift in Sources */,
 				B6CD0B012908F1B70068BC5D /* DemoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,47 +436,46 @@
 		};
 		CE983D8B27EC0B3200F895C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 63EE5EDF074839BEB3893363 /* Pods-sdkDemo.debug.xcconfig */;
+			baseConfigurationReference = FED793EE73395BC76FB8AFE8 /* Pods-sdkDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = M7MAG5PK95;
 				ENABLE_BITCODE = NO;
+				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/widekyc/Products/Library/Frameworks",
-					"$(PROJECT_DIR)/widekyc\\ /Products/Library/Frameworks",
-					"$(PROJECT_DIR)/widekyc\\ 1/Products/Library/Frameworks",
-					"$(PROJECT_DIR)/widekyc\\ 2/Products/Library/Frameworks",
-					"$(PROJECT_DIR)/widekyc\\ 3/Products/Library/Frameworks",
-					"$(PROJECT_DIR)/widekyc\\ 4/Products/Library/Frameworks",
-					"$(PROJECT_DIR)/widekyc1/Products/Library/Frameworks",
-					"$(PROJECT_DIR)/widekycSkipYes/Products/Library/Frameworks",
-					"$(PROJECT_DIR)/widekyc\\ 2022-03-30\\ 10-14-50/Products/Library/Frameworks",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/sdkDemo",
 				);
+				GCC_NO_COMMON_BLOCKS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = sdkDemo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "WideKYC Example";
 				INFOPLIST_KEY_NSCameraUsageDescription = "description permision camera";
+				INFOPLIST_KEY_NSMotionUsageDescription = "This app needs to access motion data";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = "gyroscope armv7";
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "Portrait UIInterfaceOrientationPortrait";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeRight UIInterfaceOrientationLandscapeLeft";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.1.3;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = id.co.widetechnologies.mobile.sdkDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -452,47 +489,45 @@
 		};
 		CE983D8C27EC0B3200F895C4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 661BE073A592897F7C21CA51 /* Pods-sdkDemo.release.xcconfig */;
+			baseConfigurationReference = C54EA8EE3186E0DC7482D62F /* Pods-sdkDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = M7MAG5PK95;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/widekyc/Products/Library/Frameworks",
-					"$(PROJECT_DIR)/widekyc\\ /Products/Library/Frameworks",
-					"$(PROJECT_DIR)/widekyc\\ 1/Products/Library/Frameworks",
-					"$(PROJECT_DIR)/widekyc\\ 2/Products/Library/Frameworks",
-					"$(PROJECT_DIR)/widekyc\\ 3/Products/Library/Frameworks",
-					"$(PROJECT_DIR)/widekyc\\ 4/Products/Library/Frameworks",
-					"$(PROJECT_DIR)/widekyc1/Products/Library/Frameworks",
-					"$(PROJECT_DIR)/widekycSkipYes/Products/Library/Frameworks",
-					"$(PROJECT_DIR)/widekyc\\ 2022-03-30\\ 10-14-50/Products/Library/Frameworks",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/sdkDemo",
 				);
+				GCC_NO_COMMON_BLOCKS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = sdkDemo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "WideKYC Example";
 				INFOPLIST_KEY_NSCameraUsageDescription = "description permision camera";
+				INFOPLIST_KEY_NSMotionUsageDescription = "This app needs to access motion data";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = "gyroscope armv7";
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "Portrait UIInterfaceOrientationPortrait";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeRight UIInterfaceOrientationLandscapeLeft";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.1.3;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = id.co.widetechnologies.mobile.sdkDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
