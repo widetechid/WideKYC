@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import widekyc
+import WideKYC
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,11 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        WKYC.sharedInstance.configure(application)
         return true
-    }
-    
-    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
-        return WKYC.sharedInstance.application(application, supportedInterfaceOrientationsFor: window)
     }
 }
