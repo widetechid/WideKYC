@@ -201,10 +201,9 @@ public class MobileSDKActivity extends AppCompatActivity {
                                             }
                                             else{
                                                 /**
-                                                 * this is how to get processed image from product 00 & 01
-                                                 * image will be send only onCompleted callback
-                                                 * String imagePath = response.data.getString("WKYCConstants.PROCESSED_IMAGE_PATH");
-                                                 * String imageBase64 = getBase64FromPath(imagePath);
+                                                 * this is how to get processed image
+                                                 * image will be set only onCompleted callback
+                                                 * String imageBase64 = WKYCConstants.BASE64_IMAGE_RESULT;
                                                  */
                                                 checkResult(response.data.getString(WKYCConstants.TRX_ID));
                                             }
