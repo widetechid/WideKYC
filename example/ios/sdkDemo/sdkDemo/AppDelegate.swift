@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import WideKYC
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
