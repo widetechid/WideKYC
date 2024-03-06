@@ -2,6 +2,8 @@ package com.wide.mobile.wkycdemo;
 
 import android.util.Log;
 
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
@@ -36,18 +38,33 @@ public class LocalRequest {
             Log.d(TAG, requestUrl +", request data : " + requestData);
             Log.d(TAG, requestUrl + ", result code : " + resultCode);
             if (HttpURLConnection.HTTP_OK == resultCode) {
-                StringBuffer sb = new StringBuffer();
-                String readLine = new String();
+                String readLine;
                 BufferedReader responseReader = new BufferedReader(new InputStreamReader(httpConn.getInputStream(), "UTF-8"));
+                StringBuilder response = new StringBuilder();
                 while ((readLine = responseReader.readLine()) != null) {
-                    sb.append(readLine).append("\n");
+                    response.append(readLine);
                 }
                 responseReader.close();
-                Log.d(TAG, requestUrl +", responds : " + sb.toString());
-                return sb.toString();
+                Log.d(TAG, requestUrl +", responds : " + response);
+                JSONObject responseObj = new JSONObject(response.toString());
+                responseObj.put("statusCode","SUCCESSFUL");
+                return responseObj.toString();
+            }
+            else if(HttpURLConnection.HTTP_INTERNAL_ERROR == resultCode){
+                BufferedReader errorReader = new BufferedReader(new InputStreamReader(httpConn.getErrorStream()));
+                String errorMessage;
+                StringBuilder response = new StringBuilder();
+                while ((errorMessage = errorReader.readLine()) != null) {
+                    response.append(errorMessage);
+                }
+                errorReader.close();
+                Log.d(TAG, requestUrl +", responds : " + response);
+                JSONObject responseObj = new JSONObject(response.toString());
+                responseObj.put("statusCode", "ERROR");
+                return responseObj.toString();
             }
             else{
-                return resultCode+"";
+                return "";
             }
         } catch (Exception e) {
             e.printStackTrace();

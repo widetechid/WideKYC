@@ -155,78 +155,69 @@ public class MobileSDKActivity extends AppCompatActivity {
             @Override
             public void run() {
                 String result = initMerchant();
-                if (result.length() == 3) {
-                    showToast("network exception, please try again. error code : "+result);
+                if (TextUtils.isEmpty(result)) {
+                    showToast("network exception, please try again");
                     return;
                 }
-                else if(result.contains("Error")){
-                    showToast(result);
-                    return;
-                }
-
-                try{
+                try {
                     JSONObject resultJson = new JSONObject(result);
-                    if(resultJson.getString("statusCode").equalsIgnoreCase("ERROR")){
-                        showToast(resultJson.getString("responseStatusDetails"));
-                    }
-                    else{
-                        /**
-                         * You need to provide WKYCID for product 02 with service level 62021 to work
-                         */
-                        WKYCID wkycid = new WKYCID();
-                        wkycid.nik = "3203012503770011";
-                        wkycid.name = "Guohui Chen";
-                        wkycid.birthdate = "25-03-1977";
-                        wkycid.birthplace = "Fujian";
-                        wkycid.address = "Jl Selamet, Perumahan Rancabali";
+                    /**
+                     * You need to provide WKYCID for product 02 with service level 62021 to work
+                     */
+                    WKYCID wkycid = new WKYCID();
+                    wkycid.nik = "3203012503770011";
+                    wkycid.name = "Guohui Chen";
+                    wkycid.birthdate = "25-03-1977";
+                    wkycid.birthplace = "Fujian";
+                    wkycid.address = "Jl Selamet, Perumahan Rancabali";
 
-                        final WKYC wkyc = WKYC.getInstance(context);
-                        final WKYCRequest request = new WKYCRequest();
-                        request.wkycConfig = new Gson().fromJson(resultJson.getString("content"), WKYCConfig.class);
-                        request.clientConfig = new HashMap<>();
-                        request.clientConfig.put(WKYCConstants.LOCALE, WKYCConstants.LANG_EN);
-                        request.clientConfig.put(WKYCConstants.FLAT_SURFACE_ONLY, true);
-                        request.clientConfig.put(WKYCConstants.UI_CONFIG_PATH, "config.json");
-                        request.wkycid = wkycid;
-                        mHandler.postAtFrontOfQueue(new Runnable() {
-                            @Override
-                            public void run() {
-                                Log.d(TAG, "Start WideKYC");
-                                wkyc.start(request, new WKYCCallback() {
-                                    @Override
-                                    public void onCompleted(WKYCResponse response) {
-                                        try{
-                                            if(response.status.equalsIgnoreCase("ERROR")){
-                                                showResponse(context, request.wkycConfig.trxId, response.data.toString());
-                                            }
-                                            else{
-                                                /**
-                                                 * this is how to get processed image
-                                                 * image will be set only onCompleted callback
-                                                 * String imageBase64 = WKYCConstants.BASE64_IMAGE_RESULT;
-                                                 */
-                                                checkResult(response.data.getString(WKYCConstants.TRX_ID));
-                                            }
+                    final WKYC wkyc = WKYC.getInstance(context);
+                    final WKYCRequest request = new WKYCRequest();
+                    request.wkycConfig = new Gson().fromJson(resultJson.toString(), WKYCConfig.class);
+                    request.clientConfig = new HashMap<>();
+                    request.clientConfig.put(WKYCConstants.LOCALE, WKYCConstants.LANG_EN);
+                    request.clientConfig.put(WKYCConstants.FLAT_SURFACE_ONLY, true);
+                    request.clientConfig.put(WKYCConstants.UI_CONFIG_PATH, "config.json");
+                    request.wkycid = wkycid;
+                    mHandler.postAtFrontOfQueue(new Runnable() {
+                        @Override
+                        public void run() {
+                            Log.d(TAG, "Start WideKYC");
+                            wkyc.start(request, new WKYCCallback() {
+                                @Override
+                                public void onCompleted(WKYCResponse response) {
+                                    try{
+                                        if(response.status.equalsIgnoreCase("ERROR")){
+                                            showResponse(context, request.wkycConfig.trxId, response.data.toString());
                                         }
-                                        catch (JSONException e){
-                                            loader.setVisibility(View.INVISIBLE);
-                                            e.printStackTrace();
+                                        else{
+                                            /**
+                                             * this is how to get processed image
+                                             * image will be set only onCompleted callback
+                                             * String imageBase64 = WKYCConstants.BASE64_IMAGE_RESULT;
+                                             */
+                                            checkResult(response.data.getString(WKYCConstants.TRX_ID));
                                         }
                                     }
-
-                                    @Override
-                                    public void onInterrupted(WKYCResponse response) {
-                                        showToast(response.message);
+                                    catch (JSONException e){
+                                        loader.setVisibility(View.INVISIBLE);
+                                        e.printStackTrace();
                                     }
+                                }
 
-                                    @Override
-                                    public void onCancel(WKYCResponse response) {
-                                        showToast(response.message);
-                                    }
-                                });
-                            }
-                        });
-                    }
+                                @Override
+                                public void onInterrupted(WKYCResponse response) {
+                                    showToast(response.message);
+                                }
+
+                                @Override
+                                public void onCancel(WKYCResponse response) {
+                                    showToast(response.message);
+                                }
+                            });
+                        }
+                    });
+
                 }
                 catch (Exception e){
                     loader.setVisibility(View.INVISIBLE);
@@ -249,7 +240,6 @@ public class MobileSDKActivity extends AppCompatActivity {
                     String result = request.request(requestUrl, requestData, null);
                     if (TextUtils.isEmpty(result)) {
                         showToast("Failed checkResult : network exception, please try again");
-                        return;
                     }
                     else{
                         showResponse(context, transactionId, result);
