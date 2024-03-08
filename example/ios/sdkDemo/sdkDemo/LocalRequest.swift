@@ -24,7 +24,7 @@ class LocalRequest : NSObject{
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request! as URLRequest) { datas, response, error in
             let httpResponse = response as? HTTPURLResponse
-            if httpResponse?.statusCode == 200 {
+            if httpResponse?.statusCode == 200 || httpResponse?.statusCode == 500 {
                 do {
                     if let jsonResult = try JSONSerialization.jsonObject(with: datas!, options: []) as? NSDictionary
                     {

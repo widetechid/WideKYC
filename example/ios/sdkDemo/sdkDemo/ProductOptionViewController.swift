@@ -26,7 +26,7 @@ class ProductOptionViewController: UIViewController, UITableViewDelegate, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        arrData = ["00", "01", "02", "03", "04","05", "06"]
+        arrData = ["00", "01", "02", "03", "04"]
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         tblProduct.delegate = self
         tblProduct.dataSource = self
@@ -49,4 +49,5 @@ class ProductOptionViewController: UIViewController, UITableViewDelegate, UITabl
         delegateProduct?.ProductDelegate(str: arrData[indexPath.row])
         self.dismiss(animated: true, completion: nil)
     }
+    
 }

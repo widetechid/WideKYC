@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pUe-z5-dJl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pUe-z5-dJl">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -183,10 +183,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CeB-ti-Ucq">
-                                <rect key="frame" x="50" y="273" width="314" height="350"/>
+                                <rect key="frame" x="50" y="323" width="314" height="250"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="t6G-hX-4Kt">
-                                        <rect key="frame" x="1" y="1" width="312" height="348"/>
+                                        <rect key="frame" x="1" y="1" width="312" height="248"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellProduct" rowHeight="49" id="ggS-7q-3YP" customClass="ProductTableViewCell" customModule="sdkDemo" customModuleProvider="target">
@@ -227,7 +227,7 @@
                                     <constraint firstAttribute="trailing" secondItem="t6G-hX-4Kt" secondAttribute="trailing" constant="1" id="GVB-e4-OP2"/>
                                     <constraint firstItem="t6G-hX-4Kt" firstAttribute="leading" secondItem="CeB-ti-Ucq" secondAttribute="leading" constant="1" id="Txo-ZD-S1n"/>
                                     <constraint firstAttribute="bottom" secondItem="t6G-hX-4Kt" secondAttribute="bottom" constant="1" id="anQ-xD-qV3"/>
-                                    <constraint firstAttribute="height" constant="350" id="sJM-fA-qKp"/>
+                                    <constraint firstAttribute="height" constant="250" id="sJM-fA-qKp"/>
                                 </constraints>
                             </view>
                         </subviews>

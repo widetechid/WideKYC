@@ -98,80 +98,68 @@ class DemoViewController:UIViewController, UITextFieldDelegate, delegateProduct 
     
     @IBAction func startAction(_ sender: Any) {
         WKYCHelper.showLoading()
-
         self.mockInitRequest(completion: { [self] result, error  in
-
             if result?.count == 0 || result == nil {
                 DispatchQueue.main.async {
                     self.showAlertMessage(vc: self, titleStr: "Warning", messageStr: "network exception, please try again")
                 }
             }
             else{
-                let resultJson = result!.object(forKey: "statusCode") as? String ?? ""
-                if resultJson == "ERROR"{
-                    DispatchQueue.main.async {
-                        self.showAlertMessage(vc: self, titleStr: "Warning", messageStr: "Service Error")
-                    }
-                }
-                else{
-                    /**
-                    * You need to provide WKYCID for product 02 with service level 62021 to work
-                    * To get base64 Image, you neet to access static global variable WKYCConstants.BASE64_IMAGE_RESULT
-                    */
+                /**
+                * You need to provide WKYCID for product 02 with service level 62021 to work
+                * To get base64 Image, you neet to access static global variable WKYCConstants.BASE64_IMAGE_RESULT
+                */
 
-                    let wkycid = WKYCID()
-                    wkycid.nik = "3203012503770011"
-                    wkycid.name = "Guohui Chen"
-                    wkycid.birthdate = "25-03-1977"
-                    wkycid.birthplace = "Fujian"
-                    wkycid.address = "Jl Selamet, Perumahan Rancabali"
+                let wkycid = WKYCID()
+                wkycid.nik = "3203012503770011"
+                wkycid.name = "Guohui Chen"
+                wkycid.birthdate = "25-03-1977"
+                wkycid.birthplace = "Fujian"
+                wkycid.address = "Jl Selamet, Perumahan Rancabali"
 
-                    let dict = result!.object(forKey: "content") as? NSDictionary ?? [:]
-                    self.wkycConfig.trxId = dict.object(forKey: "trxId") as? String
-                    self.wkycConfig.product = dict.object(forKey: "product") as? String
-                    self.wkycConfig.gatewayUrl = dict.object(forKey: "gatewayUrl") as? String
-                    self.wkycConfig.serviceLevel = dict.object(forKey: "serviceLevel") as? String
+                self.wkycConfig.trxId = result?.object(forKey: "trxId") as? String ?? ""
+                self.wkycConfig.product = result?.object(forKey: "product") as? String ?? ""
+                self.wkycConfig.gatewayUrl = result?.object(forKey: "gatewayUrl") as? String ?? ""
+                self.wkycConfig.serviceLevel = result?.object(forKey: "serviceLevel") as? String ?? ""
 
-                    var clientConfig: Dictionary = [String: Any]()
-                    clientConfig[WKYCConstants.LOCALE] = WKYCConstants.LANG_EN
-                    clientConfig[WKYCConstants.UI_CONFIG_PATH] = "config.json"
-                    clientConfig[WKYCConstants.FLAT_SURFACE_ONLY] = true
+                var clientConfig: Dictionary = [String: Any]()
+                clientConfig[WKYCConstants.LOCALE] = WKYCConstants.LANG_EN
+                clientConfig[WKYCConstants.UI_CONFIG_PATH] = "config.json"
+                clientConfig[WKYCConstants.FLAT_SURFACE_ONLY] = true
 
-                    let request = WKYCRequest(viewControllerKey: self, wkycConfig: self.wkycConfig, clientConfig: clientConfig, wkycId: wkycid)
+                let request = WKYCRequest(viewControllerKey: self, wkycConfig: self.wkycConfig, clientConfig: clientConfig, wkycId: wkycid)
 
-                    WKYC.sharedInstance.start(request: request,
-                        completeCallback: { value in
-                            if value.status == "ERROR"{
-                                if let jsonData = try? JSONSerialization.data(withJSONObject: value.data, options: []) {
-                                    if let jsonString = String(data: jsonData, encoding: String.Encoding.utf8) {
-                                        let response = jsonString.replacingOccurrences(of: "\\/", with: "/")
-                                        DispatchQueue.main.async {
-                                            self.showAlertMessage(vc: self, titleStr: "Result", messageStr: String(format: "%@", response))
-                                        }
+                WKYC.sharedInstance.start(request: request,
+                    completeCallback: { value in
+                        if value.status == "ERROR" {
+                            if let jsonData = try? JSONSerialization.data(withJSONObject: value.data, options: []) {
+                                if let jsonString = String(data: jsonData, encoding: String.Encoding.utf8) {
+                                    let response = jsonString.replacingOccurrences(of: "\\/", with: "/")
+                                    DispatchQueue.main.async {
+                                        self.showAlertMessage(vc: self, titleStr: "Result", messageStr: String(format: "%@", response))
                                     }
                                 }
-                           }
-                           else{
-                               DispatchQueue.main.async {
-                                   WKYCHelper.showLoading()
-                                   self.checkResultWithId(transactionId: value.data[WKYCConstants.TRX_ID] as! String)
-                               }
+                            }
+                       }
+                       else{                           
+                           DispatchQueue.main.async {
+                               WKYCHelper.showLoading()
+                               self.checkResultWithId(transactionId: value.data[WKYCConstants.TRX_ID] as! String)
                            }
                        }
-                       , interruptCallback: { value in
-                               DispatchQueue.main.async {
-                                   self.showAlertMessage(vc: self, titleStr: "Warning", messageStr: String(format: "%@", value.message!))
-                               }
-                       }
-                       , cancelCallback: { value in
+                   }
+                   , interruptCallback: { value in
                            DispatchQueue.main.async {
                                self.showAlertMessage(vc: self, titleStr: "Warning", messageStr: String(format: "%@", value.message!))
                            }
-
+                   }
+                   , cancelCallback: { value in
+                       DispatchQueue.main.async {
+                           self.showAlertMessage(vc: self, titleStr: "Warning", messageStr: String(format: "%@", value.message!))
                        }
-                   )
 
-                }
+                   }
+               )
             }
         })
     }
@@ -268,7 +256,7 @@ class DemoViewController:UIViewController, UITextFieldDelegate, delegateProduct 
                             completion(result, nil)
                         }
                         else{
-                            completion(nil, error!)
+                            completion(nil, error)
                         }
                     }
                 })
